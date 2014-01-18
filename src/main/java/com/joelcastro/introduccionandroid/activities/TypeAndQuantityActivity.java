@@ -14,14 +14,16 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.googlecode.androidannotations.annotations.EActivity;
 import com.joelcastro.introduccionandroid.R;
 
+ @EActivity(R.layout.activity_typeandquantity)
 public class TypeAndQuantityActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_typeandquantity);
+
 
 
         final EditText peso = (EditText) findViewById(R.id.textWeightCData2);
@@ -77,7 +79,7 @@ public class TypeAndQuantityActivity extends Activity {
 
          button.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
-                 Intent intent = new Intent(TypeAndQuantityActivity.this, resultActivity.class);
+                 Intent intent = new Intent(getBaseContext(), ResultsActivity_.class);
                  intent.putExtra("cif",cif.getText().toString());
                  intent.putExtra("ITmat",cbit.isChecked());
                  intent.putExtra("Fridge",cbfg.isChecked());
@@ -111,7 +113,7 @@ public class TypeAndQuantityActivity extends Activity {
                         .setCancelable(false)
                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                Intent intent = new  Intent(TypeAndQuantityActivity.this, MainActivity.class);
+                                Intent intent = new  Intent(getBaseContext(), LoginActivity_.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                                 finish();}})

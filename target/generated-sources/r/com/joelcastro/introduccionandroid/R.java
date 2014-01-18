@@ -225,6 +225,7 @@ containing a value of this type.
         public static final int buttonDate=0x7f050027;
         public static final int buttonEmailCData1=0x7f05000b;
         public static final int buttonEnterMain=0x7f050017;
+        public static final int buttonInfoDom=0x7f05000e;
         public static final int buttonPhoneCData1=0x7f050009;
         public static final int buttonWebCData1=0x7f05000d;
         public static final int button_deposite=0x7f050033;
@@ -240,7 +241,6 @@ containing a value of this type.
         public static final int imageViewFridge=0x7f05002e;
         public static final int imageViewITMaterial=0x7f05002c;
         public static final int imageViewOil=0x7f050030;
-        public static final int info_dom=0x7f05000e;
         public static final int info_dom_city=0x7f050013;
         public static final int info_dom_country=0x7f050012;
         public static final int info_dom_gps=0x7f050014;

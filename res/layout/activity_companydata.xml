@@ -111,7 +111,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/info_dom"
-            android:id="@+id/info_dom"
+            android:id="@+id/buttonInfoDom"
             android:layout_marginTop="20dp"
             android:layout_gravity="right"
             android:enabled="false"

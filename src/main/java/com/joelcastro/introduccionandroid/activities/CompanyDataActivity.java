@@ -10,38 +10,80 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.Click;
+import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.ViewById;
 import com.joelcastro.introduccionandroid.R;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+@EActivity(R.layout.activity_companydata)
 public class CompanyDataActivity extends Activity {
+
+    Bundle extra = this.getIntent().getExtras();
+
+    @ViewById(R.id.textCIFCData1) EditText cif;
+    @ViewById(R.id.textCNameCData1) EditText name;
+    @ViewById(R.id.textPhoneCData1) EditText phone;
+    @ViewById(R.id.textEmailCData1) EditText email;
+    @ViewById(R.id.textWebCData1) EditText web;
+
+    @ViewById(R.id.button_siguiente) Button button_siguiente;
+    @ViewById(R.id.buttonInfoDom) Button button_dominio;
+    @ViewById(R.id.buttonPhoneCData1) Button button_phone;
+    @ViewById(R.id.buttonEmailCData1) Button button_email;
+    @ViewById(R.id.buttonWebCData1) Button button_web;
+
+    @ViewById(R.id.spinner) Spinner spinner;
+
+    @Click(value = R.id.buttonInfoDom)
+    void doButtonDominio() {
+        Intent intent = new Intent(getBaseContext(), InfoDomActivity_.class);
+        intent.putExtra("url", web.getText().toString());
+        intent.putExtra("nombreParada",extra.getString("nombreParada"));
+        startActivity(intent);
+    }
+
+    @Click(value = R.id.button_siguiente)
+    void doButtonSiguiente(){
+        Intent intent = new Intent(getBaseContext(), TypeAndQuantityActivity_.class);
+        intent.putExtra("company",extra.getBoolean("company"));
+        intent.putExtra("email",email.getText().toString());
+        intent.putExtra("nombreParada",extra.getString("nombreParada"));
+        startActivity(intent);
+    }
+
+
+    @Click(value = R.id.buttonPhoneCData1)
+    void doButtonPhoneData(){
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone.getText().toString()));
+        startActivity(intent);
+    }
+
+    @Click(value = R.id.buttonEmailCData1)
+    void doButtonEmail(){
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",email.getText().toString(), null));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Asunto");
+        startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
+
+    }
+    @Click(value = R.id.buttonWebCData1)
+    void doButtonWeb(){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(web.getText().toString()));
+        startActivity(browserIntent);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_companydata);
 
-
-        final EditText cif = (EditText) findViewById(R.id.textCIFCData1);
-        final EditText name = (EditText) findViewById(R.id.textCNameCData1);
-        final EditText phone = (EditText) findViewById(R.id.textPhoneCData1);
-        final EditText email = (EditText) findViewById(R.id.textEmailCData1);
-        final EditText web = (EditText) findViewById(R.id.textWebCData1);
-
-
-        final Button button_siguiente = (Button) findViewById(R.id.button_siguiente);
-        final Button button_dominio = (Button) findViewById(R.id.info_dom);
-        final Button button_phone = (Button) findViewById(R.id.buttonPhoneCData1);
-        final Button button_email = (Button) findViewById(R.id.buttonEmailCData1);
-        final Button button_web = (Button) findViewById(R.id.buttonWebCData1);
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -54,16 +96,15 @@ public class CompanyDataActivity extends Activity {
         final Bundle extra = this.getIntent().getExtras();
            cif.setText(extra.getString("cif"));
 
+
+
+
         cif.addTextChangedListener(new TextWatcher() {
             @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-            }
+            public void afterTextChanged(Editable s) {}
 
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // TODO Auto-generated method stub
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -83,14 +124,10 @@ public class CompanyDataActivity extends Activity {
 
         name.addTextChangedListener(new TextWatcher() {
             @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-            }
+            public void afterTextChanged(Editable s) {}
 
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // TODO Auto-generated method stub
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -110,14 +147,10 @@ public class CompanyDataActivity extends Activity {
 
         phone.addTextChangedListener(new TextWatcher() {
             @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-            }
+            public void afterTextChanged(Editable s) {}
 
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // TODO Auto-generated method stub
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -139,14 +172,10 @@ public class CompanyDataActivity extends Activity {
 
         email.addTextChangedListener(new TextWatcher() {
             @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-            }
+            public void afterTextChanged(Editable s) {}
 
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // TODO Auto-generated method stub
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -195,6 +224,8 @@ public class CompanyDataActivity extends Activity {
         }
         );
 
+/*
+
         button_dominio.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(CompanyDataActivity.this, InfoDomActivity.class);
@@ -236,7 +267,7 @@ public class CompanyDataActivity extends Activity {
                 startActivity(browserIntent);
             }
         });
-
+*/
 
 
     }
@@ -261,7 +292,7 @@ public class CompanyDataActivity extends Activity {
                     .setCancelable(false)
                     .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                Intent intent = new  Intent(CompanyDataActivity.this, MainActivity.class);
+                                Intent intent = new  Intent(getBaseContext(), LoginActivity_.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                                 finish();}})

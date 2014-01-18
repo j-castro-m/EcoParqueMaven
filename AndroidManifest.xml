@@ -9,28 +9,28 @@
     <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="ecoparque" android:theme="@style/AppTheme">
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyC7MUY1LdoMLaUpwylhcujQgOIZDUHzJUM"/>
         <meta-data android:name="com.google.android.gms.version" android:value="2"/>
-        <activity android:label="@string/app_title" android:name=".activities.MainActivity">
+        <activity android:label="@string/app_title" android:name=".activities.LoginActivity_">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:label="@string/app_title" android:name=".activities.UserTypeActivity" android:parentActivityName="MainActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="MainActivity"/>
+        <activity android:label="@string/app_title" android:name=".activities.UserTypeActivity_" android:parentActivityName=".activities.LoginActivity_">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="activities.MainActivity_"/>
         </activity>
-        <activity android:label="@string/app_title" android:name=".activities.CompanyDataActivity" android:parentActivityName="UserTypeActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="UserTypeActivity"/>
+        <activity android:label="@string/app_title" android:name=".activities.CompanyDataActivity_" android:parentActivityName="activities.UserTypeActivity_">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="activities.UserTypeActivity_"/>
         </activity>
-        <activity android:label="@string/app_title" android:name=".activities.TypeAndQuantityActivity">
+        <activity android:label="@string/app_title" android:name=".activities.TypeAndQuantityActivity_">
         </activity>
-        <activity android:label="@string/app_title" android:name=".activities.resultActivity">
+        <activity android:label="@string/app_title" android:name=".activities.ResultsActivity_">
         </activity>
-        <activity android:label="@string/app_title" android:name=".activities.SelectionPlaceActivity" android:parentActivityName="com.joelcastro.introduccionandroid.MainActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.joelcastro.introduccionandroid.MainActivity"/>
+        <activity android:label="@string/app_title" android:name=".activities.DepositListActivity_" android:parentActivityName=".activities.LoginActivity_">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.joelcastro.introduccionandroid.activities.MainActivity_"/>
         </activity>
-        <activity android:label="@string/app_title" android:name=".activities.InfoDomActivity" android:parentActivityName="com.joelcastro.introduccionandroid.CompanyDataActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.joelcastro.introduccionandroid.CompanyDataActivity"/>
+        <activity android:label="@string/app_title" android:name=".activities.InfoDomActivity_" android:parentActivityName="com.joelcastro.introduccionandroid.activities.CompanyDataActivity_">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.joelcastro.introduccionandroid.activities.CompanyDataActivity_"/>
         </activity>
     </application>
 

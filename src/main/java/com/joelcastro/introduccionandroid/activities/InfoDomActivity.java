@@ -7,32 +7,36 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.ViewById;
 import com.joelcastro.introduccionandroid.R;
-import com.joelcastro.introduccionandroid.objectJSON;
-
+import com.joelcastro.introduccionandroid.utils.objectJSON;
+@EActivity(R.layout.activity_infodom)
 public class InfoDomActivity extends Activity {
+    @ViewById(R.id.info_dom_url) TextView urlView;
+    @ViewById(R.id.info_dom_ip) TextView textIP;
+    @ViewById(R.id.info_dom_city) TextView textCity;
+    @ViewById(R.id.info_dom_country) TextView textCountry;
+    @ViewById(R.id.info_dom_gps) TextView textGps;
+
+
+
+    final Bundle extra = this.getIntent().getExtras();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_infodom);
 
 
         final Bundle extra = this.getIntent().getExtras();
-        final TextView urlView = (TextView) findViewById(R.id.info_dom_url);
-        final TextView textIP = (TextView) findViewById(R.id.info_dom_ip);
-        final TextView textCity = (TextView) findViewById(R.id.info_dom_city);
-        final TextView textCountry = (TextView) findViewById(R.id.info_dom_country);
-        final TextView textGps = (TextView) findViewById(R.id.info_dom_gps);
-
         urlView.setText(extra.getString("url"));
-
         objectJSON json = new objectJSON(this,textIP,textCity,textCountry,textGps);
         json.execute(extra.getString("url"));
-
-
         String gps = json.getGps();
     }
     @Override
@@ -54,7 +58,7 @@ public class InfoDomActivity extends Activity {
                         .setCancelable(false)
                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                Intent intent = new  Intent(InfoDomActivity.this, MainActivity.class);
+                                Intent intent = new  Intent(getBaseContext(), LoginActivity_.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                                 finish();}})

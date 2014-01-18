@@ -15,17 +15,19 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.EActivity;
 import com.joelcastro.introduccionandroid.R;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@EActivity(R.layout.activity_usertype)
 public class UserTypeActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usertype);
+
 
 
         final Button button = (Button) findViewById(R.id.button_deposito);
@@ -54,7 +56,7 @@ public class UserTypeActivity extends Activity {
 
                 if(((RadioButton) findViewById(R.id.rbuttonCompany)).isChecked())
                 {
-                    Intent intent = new Intent(UserTypeActivity.this, CompanyDataActivity.class);
+                    Intent intent = new Intent(getBaseContext(), CompanyDataActivity_.class);
                     intent.putExtra("cif",cif.getText().toString());
                     intent.putExtra("company",true);
                     intent.putExtra("nombreParada",extra.getString("nombreParada"));
@@ -62,7 +64,7 @@ public class UserTypeActivity extends Activity {
                 }
                 else
                 {
-                    Intent intent = new Intent(UserTypeActivity.this, TypeAndQuantityActivity.class);
+                    Intent intent = new Intent(getBaseContext(), TypeAndQuantityActivity_.class);
                     intent.putExtra("cif",cif.getText().toString());
                     intent.putExtra("company",false);
                     intent.putExtra("nombreParada",extra.getString("nombreParada"));
@@ -115,7 +117,7 @@ public class UserTypeActivity extends Activity {
                         .setCancelable(false)
                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                Intent intent = new  Intent(UserTypeActivity.this, MainActivity.class);
+                                Intent intent = new  Intent(getBaseContext(), LoginActivity_.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                                 finish();}})
