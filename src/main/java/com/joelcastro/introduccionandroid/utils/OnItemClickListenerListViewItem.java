@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.joelcastro.introduccionandroid.R;
 import com.joelcastro.introduccionandroid.activities.UserTypeActivity;
+import com.joelcastro.introduccionandroid.activities.UserTypeActivity_;
 
 
 public class OnItemClickListenerListViewItem implements OnItemClickListener {
@@ -30,7 +31,7 @@ public class OnItemClickListenerListViewItem implements OnItemClickListener {
         String listItemId = textViewItem.getTag().toString();
 
 
-        Intent intent = new Intent().setClass(context, UserTypeActivity.class);
+        Intent intent = new Intent().setClass(context, UserTypeActivity_.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra("IDParada", listItemId);
         intent.putExtra("nombreParada", listItemText);

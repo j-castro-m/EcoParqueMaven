@@ -15,7 +15,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.AfterViews;
+import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.TextChange;
+import com.googlecode.androidannotations.annotations.ViewById;
 import com.joelcastro.introduccionandroid.R;
 
 import java.util.regex.Matcher;
@@ -24,80 +28,65 @@ import java.util.regex.Pattern;
 @EActivity(R.layout.activity_usertype)
 public class UserTypeActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    @ViewById(R.id.userTypeCIF) EditText cif;
+    @ViewById(R.id.button_deposito) Button button;
+    @ViewById(R.id.rbuttonCompany) RadioButton radioButtonCompany;
+    @ViewById(R.id.rbuttonCiudadano) RadioButton radioButtonUser;
+
+    Bundle extra;
+
+    @AfterViews
+    void getData(){
+        extra = this.getIntent().getExtras();
+
+    }
+
+    @Click(value = R.id.rbuttonCompany)
+    public void onCompanyClick() {
+        cif.setHint("CIF");
+    }
 
 
-
-        final Button button = (Button) findViewById(R.id.button_deposito);
-        final EditText cif = (EditText) findViewById(R.id.userTypeCIF);
-        final RadioButton rbcom = (RadioButton) findViewById(R.id.rbuttonCompany);
-        final RadioButton rbper = (RadioButton) findViewById(R.id.rbuttonCiudadano);
-        final Bundle extra = this.getIntent().getExtras();
-
-
-
-        rbcom.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                cif.setHint("CIF");
-            }
-        });
-
-        rbper.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+    @Click(value = R.id.rbuttonCiudadano)
+    public void onCitizenClick() {
                 cif.setHint("NIF");
-            }
-        });
+    }
+
+    @Click(value = R.id.button_deposito)
+    public void inSubmitClick(){
+        if(((RadioButton) findViewById(R.id.rbuttonCompany)).isChecked())
+        {
+            Intent intent = new Intent(this, CompanyDataActivity_.class);
+            intent.putExtra("cif",cif.getText().toString());
+            intent.putExtra("company",true);
+            intent.putExtra("nombreParada",extra.getString("nombreParada"));
+            startActivity(intent);
+        }
+        else
+        {
+            Intent intent = new Intent(this, TypeAndQuantityActivity_.class);
+            intent.putExtra("cif",cif.getText().toString());
+            intent.putExtra("company",false);
+            intent.putExtra("nombreParada",extra.getString("nombreParada"));
+            startActivity(intent);
+        }
+    }
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
-                if(((RadioButton) findViewById(R.id.rbuttonCompany)).isChecked())
-                {
-                    Intent intent = new Intent(getBaseContext(), CompanyDataActivity_.class);
-                    intent.putExtra("cif",cif.getText().toString());
-                    intent.putExtra("company",true);
-                    intent.putExtra("nombreParada",extra.getString("nombreParada"));
-                    startActivity(intent);
-                }
-                else
-                {
-                    Intent intent = new Intent(getBaseContext(), TypeAndQuantityActivity_.class);
-                    intent.putExtra("cif",cif.getText().toString());
-                    intent.putExtra("company",false);
-                    intent.putExtra("nombreParada",extra.getString("nombreParada"));
-                    startActivity(intent);
-                }
 
-            }
-        });
-
-        cif.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+        @TextChange({R.id.userTypeCIF})
+        void onUserTextChange(TextView tv, CharSequence text) {
                 if (valid(cif)) {
                     button.setEnabled(true);
                 } else {
                     button.setEnabled(false);
                 }
-
             }
-        }
-        );
 
-    }
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -131,6 +120,8 @@ public class UserTypeActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
     public boolean valid(TextView tv)
     {
 

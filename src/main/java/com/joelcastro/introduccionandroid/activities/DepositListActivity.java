@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.ViewById;
 import com.joelcastro.introduccionandroid.utils.ArrayAdapterItem;
@@ -22,22 +23,19 @@ public class DepositListActivity extends Activity {
 
     @ViewById(R.id.listView) ListView listViewItems;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    ItemListParada[] ObjectItemData = new ItemListParada[4];
+    ArrayAdapterItem adapter;
 
 
-        ItemListParada[] ObjectItemData = new ItemListParada[4];
+    @AfterViews
+    void fillAdapterList(){
+
 
         ObjectItemData[0] = new ItemListParada(1, "San Jose - Las Fuentes",getString(R.string.urlimagen));
         ObjectItemData[1] = new ItemListParada(2, "Cogullada",getString(R.string.urlimagen));
         ObjectItemData[2] = new ItemListParada(4, "Universidad - Delicias",getString(R.string.urlimagen));
         ObjectItemData[3] = new ItemListParada(3, "Valdespartera",getString(R.string.urlimagen));
-
-
-
-        ArrayAdapterItem adapter = new ArrayAdapterItem(this, R.layout.place_item_layout, ObjectItemData);
-        ListView listViewItems = (ListView) findViewById(R.id.listView);
+        adapter = new ArrayAdapterItem(this, R.layout.place_item_layout, ObjectItemData);
         listViewItems.setAdapter(adapter);
         listViewItems.setOnItemClickListener(new OnItemClickListenerListViewItem());
 

@@ -23,6 +23,7 @@
             android:layout_width="fill_parent"
             android:layout_marginTop="100dp"
             android:hint="@string/usuario"
+            android:inputType="text"
             android:id="@+id/textUserMain"/>
         <EditText
             android:layout_height="wrap_content"
@@ -30,6 +31,7 @@
             android:layout_marginTop="20dp"
             android:password="true"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:id="@+id/textPassMain"/>
 
         <Button
