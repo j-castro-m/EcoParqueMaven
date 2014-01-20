@@ -14,6 +14,7 @@ public final class MaterialesFakeDAO_
 {
 
     private Context context_;
+    private static MaterialesFakeDAO_ instance_;
 
     private MaterialesFakeDAO_(Context context) {
         context_ = context;
@@ -43,12 +44,13 @@ public final class MaterialesFakeDAO_
     }
 
     public static MaterialesFakeDAO_ getInstance_(Context context) {
-        return new MaterialesFakeDAO_(context);
+        if (instance_ == null) {
+            instance_ = new MaterialesFakeDAO_(context.getApplicationContext());
+        }
+        return instance_;
     }
 
     public void rebind(Context context) {
-        context_ = context;
-        init_();
     }
 
 }

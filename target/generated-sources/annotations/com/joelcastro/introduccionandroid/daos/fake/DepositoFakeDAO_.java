@@ -14,6 +14,7 @@ public final class DepositoFakeDAO_
 {
 
     private Context context_;
+    private static DepositoFakeDAO_ instance_;
 
     private DepositoFakeDAO_(Context context) {
         context_ = context;
@@ -43,12 +44,13 @@ public final class DepositoFakeDAO_
     }
 
     public static DepositoFakeDAO_ getInstance_(Context context) {
-        return new DepositoFakeDAO_(context);
+        if (instance_ == null) {
+            instance_ = new DepositoFakeDAO_(context.getApplicationContext());
+        }
+        return instance_;
     }
 
     public void rebind(Context context) {
-        context_ = context;
-        init_();
     }
 
 }

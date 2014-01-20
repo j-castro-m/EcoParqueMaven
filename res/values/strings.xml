@@ -55,6 +55,7 @@
     <string name="date_text">Fecha de cobro:</string>
     <string name="end_toast">Depósito registrado</string>
     <string name="bad_login">Inicio de sesión incorrecto, revise los datos introducidos</string>
+    <string name="editar">Editar</string>
 
 
 

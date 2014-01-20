@@ -8,6 +8,8 @@ package com.joelcastro.introduccionandroid.daos;
 import android.app.Activity;
 import android.content.Context;
 import android.view.View;
+import com.joelcastro.introduccionandroid.daos.fake.DepositoFakeDAO_;
+import com.joelcastro.introduccionandroid.daos.fake.EcoParqueFakeDAO_;
 import com.joelcastro.introduccionandroid.daos.fake.MaterialesFakeDAO_;
 import com.joelcastro.introduccionandroid.daos.sqlite.MaterialesSQLiteDAO_;
 
@@ -27,8 +29,10 @@ public final class DAOFactory_
         if (!(context_ instanceof Activity)) {
             return ;
         }
-        ((MaterialesFakeDAO_) materialesFakeDAO).afterSetContentView_();
         ((MaterialesSQLiteDAO_) materialesSQLiteDAO).afterSetContentView_();
+        ((DepositoFakeDAO_) depositoFakeDAO).afterSetContentView_();
+        ((EcoParqueFakeDAO_) ecoParqueFakeDAO).afterSetContentView_();
+        ((MaterialesFakeDAO_) materialesFakeDAO).afterSetContentView_();
     }
 
     /**
@@ -45,8 +49,10 @@ public final class DAOFactory_
         if (context_ instanceof Activity) {
             Activity activity = ((Activity) context_);
         }
-        materialesFakeDAO = MaterialesFakeDAO_.getInstance_(context_);
         materialesSQLiteDAO = MaterialesSQLiteDAO_.getInstance_(context_);
+        depositoFakeDAO = DepositoFakeDAO_.getInstance_(context_);
+        ecoParqueFakeDAO = EcoParqueFakeDAO_.getInstance_(context_);
+        materialesFakeDAO = MaterialesFakeDAO_.getInstance_(context_);
         initDAOs();
     }
 

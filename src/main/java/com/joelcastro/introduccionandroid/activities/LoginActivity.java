@@ -4,10 +4,6 @@ package com.joelcastro.introduccionandroid.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -61,8 +57,8 @@ public class LoginActivity extends Activity {
         {
             myPrefs.user().put( tusuario.getText().toString());
             myPrefs.pass().put( tpass.getText().toString());
-            DepositListActivity_.intent(getBaseContext()).flags(Intent.FLAG_ACTIVITY_NEW_TASK).start();
-            //startActivity(new Intent(this, DepositListActivity_.class));
+            EcoparqueListActivity_.intent(getBaseContext()).flags(Intent.FLAG_ACTIVITY_NEW_TASK).start();
+            //startActivity(new Intent(this, EcoparqueListActivity_.class));
             //finish();
         }
         else

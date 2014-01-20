@@ -14,6 +14,7 @@ public final class DepositoSQLiteDAO_
 {
 
     private Context context_;
+    private static DepositoSQLiteDAO_ instance_;
 
     private DepositoSQLiteDAO_(Context context) {
         context_ = context;
@@ -43,12 +44,13 @@ public final class DepositoSQLiteDAO_
     }
 
     public static DepositoSQLiteDAO_ getInstance_(Context context) {
-        return new DepositoSQLiteDAO_(context);
+        if (instance_ == null) {
+            instance_ = new DepositoSQLiteDAO_(context.getApplicationContext());
+        }
+        return instance_;
     }
 
     public void rebind(Context context) {
-        context_ = context;
-        init_();
     }
 
 }
