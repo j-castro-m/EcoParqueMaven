@@ -50,7 +50,7 @@ public class TypeAndQuantityActivity extends Activity {
         }
 
 
-         @TextChange({R.id.textUserMain,R.id.textPassMain})
+         @TextChange(value=R.id.textWeightCData2)
          void onWeightTextChange(TextView tv, CharSequence text) {
              checkMarkers(checkBoxIT, checkBoxFridge, checkBoxOil,button,peso);
          }
@@ -66,7 +66,6 @@ public class TypeAndQuantityActivity extends Activity {
            intent.putExtra("Peso",peso.getText().toString());
            intent.putExtra("company",extra.getBoolean("company"));
            intent.putExtra("email",extra.getString("email"));
-           intent.putExtra("nombreParada",extra.getString("nombreParada"));
            startActivity(intent);
        }
 

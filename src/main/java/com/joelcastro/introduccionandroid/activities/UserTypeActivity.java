@@ -59,7 +59,6 @@ public class UserTypeActivity extends Activity {
             Intent intent = new Intent(this, CompanyDataActivity_.class);
             intent.putExtra("cif",cif.getText().toString());
             intent.putExtra("company",true);
-            intent.putExtra("nombreParada",extra.getString("nombreParada"));
             startActivity(intent);
         }
         else
@@ -67,7 +66,6 @@ public class UserTypeActivity extends Activity {
             Intent intent = new Intent(this, TypeAndQuantityActivity_.class);
             intent.putExtra("cif",cif.getText().toString());
             intent.putExtra("company",false);
-            intent.putExtra("nombreParada",extra.getString("nombreParada"));
             startActivity(intent);
         }
     }

@@ -24,7 +24,9 @@ import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.ViewById;
+import com.googlecode.androidannotations.annotations.sharedpreferences.Pref;
 import com.joelcastro.introduccionandroid.R;
+import com.joelcastro.introduccionandroid.utils.MyPrefs_;
 
 import java.util.Calendar;
 
@@ -44,6 +46,8 @@ public class ResultsActivity extends Activity {
     double iva;
     double total;
 
+    @Pref MyPrefs_ myPrefs;
+
     @ViewById(R.id.button_sendbymail) Button enviaremail;
     @ViewById(R.id.button_reg_dep) Button fin_reg;
 
@@ -53,13 +57,13 @@ public class ResultsActivity extends Activity {
     @ViewById(R.id.Linea) View linea;
 
     @ViewById(R.id.result_CIF) TextView cif;
-    @ViewById(R.id.result_CIF) TextView tipo_residuo;
-    @ViewById(R.id.result_CIF) TextView result_cost_text;
-    @ViewById(R.id.result_CIF) TextView textCoste;
-    @ViewById(R.id.result_CIF) TextView textPrecio;
-    @ViewById(R.id.result_CIF) TextView textIVa;
-    @ViewById(R.id.result_CIF) TextView textTotal;
-    @ViewById(R.id.result_CIF) TextView textPlace;
+    @ViewById(R.id.result_tipo_residuo) TextView tipo_residuo;
+    @ViewById(R.id.result_cost_text) TextView result_cost_text;
+    @ViewById(R.id.textDataResult) TextView textCoste;
+    @ViewById(R.id.NumberDataResult) TextView textPrecio;
+    @ViewById(R.id.TextIVAResult) TextView textIVa;
+    @ViewById(R.id.TextTotalResult) TextView textTotal;
+    @ViewById(R.id.result_Place) TextView textPlace;
 
     @ViewById(R.id.textDateCData) TextView date;
     @ViewById(R.id.buttonDate) Button edit;
@@ -76,7 +80,7 @@ public class ResultsActivity extends Activity {
         iva = precio * 0.2;
         double total = precio + iva;
 
-        textPlace.setText(extra.getString("nombreParada"));
+        textPlace.setText(myPrefs.lugarEcoParque().get());
         textCoste.setText(String.valueOf(peso)+ getString(R.string.kg)+" * 2,5"+getString(R.string.currency)+"/"+getString(R.string.kg));
         textPrecio.setText(String.valueOf(precio)+getString(R.string.currency));
         textIVa.setText(String.valueOf(iva)+getString(R.string.currency));

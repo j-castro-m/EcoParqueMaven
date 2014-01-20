@@ -7,21 +7,21 @@ import java.io.Serializable;
  */
 public class EcoParque implements Serializable{
 
-    private String id;
+    private int id;
     private String lugar;
     private String image;
 
-    public EcoParque(String id, String image, String lugar) {
+    public EcoParque(int id, String lugar, String image) {
         this.id = id;
         this.image = image;
         this.lugar = lugar;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

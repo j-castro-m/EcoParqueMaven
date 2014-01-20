@@ -16,12 +16,16 @@ import android.widget.Toast;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.Fullscreen;
+import com.googlecode.androidannotations.annotations.NoTitle;
 import com.googlecode.androidannotations.annotations.TextChange;
 import com.googlecode.androidannotations.annotations.ViewById;
 import com.googlecode.androidannotations.annotations.sharedpreferences.Pref;
 import com.joelcastro.introduccionandroid.R;
 import com.joelcastro.introduccionandroid.utils.MyPrefs_;
 
+@NoTitle
+@Fullscreen
 @EActivity(R.layout.activity_main)
 public class LoginActivity extends Activity {
 

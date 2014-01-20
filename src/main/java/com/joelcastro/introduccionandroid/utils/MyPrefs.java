@@ -7,7 +7,7 @@ import com.googlecode.androidannotations.annotations.sharedpreferences.SharedPre
 /**
  * Created by alu03009 on 18/01/14.
  */
-@SharedPref
+@SharedPref(value=SharedPref.Scope.UNIQUE)
 public interface MyPrefs {
 
     // The field name will have default value "John"
@@ -17,6 +17,18 @@ public interface MyPrefs {
     // The field age will have default value 42
     @DefaultString("")
     String pass();
+
+    @DefaultInt(0)
+    int idEcoParque();
+
+    @DefaultString("")
+    String lugarEcoParque();
+
+    @DefaultString("")
+    String company();
+
+    @DefaultString("")
+    String cif();
 
     // The field lastUpdated will have default value 0
     long lastUpdated();

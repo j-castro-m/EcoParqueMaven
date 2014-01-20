@@ -5,10 +5,6 @@ package com.joelcastro.introduccionandroid.utils;
  */
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,16 +13,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.joelcastro.introduccionandroid.R;
+import com.joelcastro.introduccionandroid.models.EcoParque;
 
-import java.io.InputStream;
-
-public class ArrayAdapterItem extends ArrayAdapter<ItemListParada> {
+public class ArrayAdapterItem extends ArrayAdapter<EcoParque> {
 
     Context mContext;
     int layoutResourceId;
-    ItemListParada data[] = null;
+    EcoParque data[] = null;
 
-    public ArrayAdapterItem(Context mContext, int layoutResourceId, ItemListParada[] data) {
+    public ArrayAdapterItem(Context mContext, int layoutResourceId, EcoParque[] data) {
 
         super(mContext, layoutResourceId, data);
 
@@ -45,17 +40,17 @@ public class ArrayAdapterItem extends ArrayAdapter<ItemListParada> {
         }
 
 
-        ItemListParada objectItem = data[position];
+        EcoParque objectItem = data[position];
 
 
         TextView textViewItem = (TextView) convertView.findViewById(R.id.textViewItem);
-        textViewItem.setText(objectItem.itemName);
-        textViewItem.setTag(objectItem.itemId);
+        textViewItem.setText(objectItem.getLugar());
+        textViewItem.setTag(objectItem.getId());
 
 
 
         new DownloadImageTask((ImageView) convertView.findViewById(R.id.image4List))
-                .execute(objectItem.urlImage);
+                .execute(objectItem.getImage());
         return convertView;
 
     }
