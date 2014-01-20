@@ -13,86 +13,67 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.AfterViews;
+import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.TextChange;
+import com.googlecode.androidannotations.annotations.ViewById;
 import com.joelcastro.introduccionandroid.R;
 
- @EActivity(R.layout.activity_typeandquantity)
+@EActivity(R.layout.activity_typeandquantity)
 public class TypeAndQuantityActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+     @ViewById(R.id.textWeightCData2) EditText peso;
+     @ViewById(R.id.textCIFCData2) EditText cif;
 
+     @ViewById(R.id.button_deposite) Button button;
 
-        final EditText peso = (EditText) findViewById(R.id.textWeightCData2);
-        final EditText cif = (EditText) findViewById(R.id.textCIFCData2);
+     @ViewById(R.id.checkBoxIT) CheckBox checkBoxIT;
+     @ViewById(R.id.checkBoxFridge) CheckBox checkBoxFridge;
+     @ViewById(R.id.checkBoxOil) CheckBox checkBoxOil;
 
-        final Button button = (Button) findViewById(R.id.button_deposite);
+     Bundle extra;
 
-        final CheckBox cbit = (CheckBox) findViewById(R.id.checkBoxIT);
-        final CheckBox cbfg = (CheckBox) findViewById(R.id.checkBoxFridge);
-        final CheckBox cboil = (CheckBox) findViewById(R.id.checkBoxOil);
-
-        final Bundle extra = this.getIntent().getExtras();
+        @AfterViews
+        void setDataonView(){
+        extra = this.getIntent().getExtras();
         cif.setText(extra.getString("cif"));
-
-        cbit.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                checkMarkers(cbit,cbfg,cboil,button,peso);
-            }
-        });
-
-        cbfg.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                checkMarkers(cbit,cbfg,cboil,button,peso);
-            }
-        });
-
-        cboil.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                checkMarkers(cbit,cbfg,cboil,button,peso);
-            }
-        });
-
-
-        peso.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                checkMarkers(cbit,cbfg,cboil,button,peso);
-
-            }
         }
-        );
+
+        @Click(value={R.id.checkBoxIT,R.id.checkBoxFridge,R.id.checkBoxOil})
+        void onClickCehackBox(){
+            checkMarkers(checkBoxIT, checkBoxFridge, checkBoxOil, button, peso);
+        }
 
 
-         button.setOnClickListener(new View.OnClickListener() {
-             public void onClick(View v) {
-                 Intent intent = new Intent(getBaseContext(), ResultsActivity_.class);
-                 intent.putExtra("cif",cif.getText().toString());
-                 intent.putExtra("ITmat",cbit.isChecked());
-                 intent.putExtra("Fridge",cbfg.isChecked());
-                 intent.putExtra("Oil",cboil.isChecked());
-                 intent.putExtra("Peso",peso.getText().toString());
-                 intent.putExtra("company",extra.getBoolean("company"));
-                 intent.putExtra("email",extra.getString("email"));
-                 intent.putExtra("nombreParada",extra.getString("nombreParada"));
-                 startActivity(intent);
-             }
-         });
+         @TextChange({R.id.textUserMain,R.id.textPassMain})
+         void onWeightTextChange(TextView tv, CharSequence text) {
+             checkMarkers(checkBoxIT, checkBoxFridge, checkBoxOil,button,peso);
+         }
 
-    }
+
+       @Click(value=R.id.button_deposite)
+       void onClickDeposite(){
+           Intent intent = new Intent(getBaseContext(), ResultsActivity_.class);
+           intent.putExtra("cif",cif.getText().toString());
+           intent.putExtra("ITmat", checkBoxIT.isChecked());
+           intent.putExtra("Fridge", checkBoxFridge.isChecked());
+           intent.putExtra("Oil", checkBoxOil.isChecked());
+           intent.putExtra("Peso",peso.getText().toString());
+           intent.putExtra("company",extra.getBoolean("company"));
+           intent.putExtra("email",extra.getString("email"));
+           intent.putExtra("nombreParada",extra.getString("nombreParada"));
+           startActivity(intent);
+       }
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

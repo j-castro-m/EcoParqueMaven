@@ -23,31 +23,32 @@
     <shared>
       <config />
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/res/layout/activity_infodom.xml">
+        <config>
+          <device>Nexus S</device>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fa7656d-4060-499b-9cbd-29030f71a065" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/DownloadImageTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes.dex" afterPath="$PROJECT_DIR$/target/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ecoparque.ap_" afterPath="$PROJECT_DIR$/target/ecoparque.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ecoparque.apk" afterPath="$PROJECT_DIR$/target/ecoparque.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ecoparque.jar" afterPath="$PROJECT_DIR$/target/ecoparque.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/res/drawable-mdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/res/drawable-xhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/res/drawable-xxhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ArrayAdapterItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ArrayAdapterItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/r/com/joelcastro/introduccionandroid/BuildConfig.java" afterPath="$PROJECT_DIR$/target/generated-sources/r/com/joelcastro/introduccionandroid/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/daos/DAOFactory_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/daos/DAOFactory_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositListActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/EcoParque.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/EcoParque.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/LoginActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/OnItemClickListenerListViewItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/OnItemClickListenerListViewItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/UserTypeActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/UserTypeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/InfoDomActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/InfoDomActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/r/com/joelcastro/introduccionandroid/R.java" afterPath="$PROJECT_DIR$/target/generated-sources/r/com/joelcastro/introduccionandroid/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_infodom.xml" afterPath="$PROJECT_DIR$/res/layout/activity_infodom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/objectJSON.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/objectJSON.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ecoparque.iws" />
@@ -115,8 +116,42 @@
       <file leaf-file-name="LoginActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="59" selection-start="1300" selection-end="1410" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1050">
+            <state line="40" column="4" selection-start="1300" selection-end="1410" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InfoDomActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/InfoDomActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="4" selection-start="1127" selection-end="1136" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="990">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objectJSON.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/objectJSON.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="116" column="92" selection-start="3848" selection-end="3848" vertical-scroll-proportion="0.0" vertical-offset="1464" max-vertical-offset="2070">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_infodom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/layout/activity_infodom.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1830">
+              <folding>
+                <element signature="e#1234#1267#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,7 +159,7 @@
       <file leaf-file-name="DepositListActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="89" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="1065">
+            <state line="23" column="4" selection-start="886" selection-end="934" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
               <folding>
                 <element signature="e#1150#1179#0" expanded="true" />
                 <element signature="e#1244#1273#0" expanded="true" />
@@ -132,15 +167,6 @@
                 <element signature="e#1449#1478#0" expanded="true" />
                 <element signature="e#2336#2365#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Deposito.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Deposito.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="21" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -166,26 +192,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserTypeActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/UserTypeActivity.java">
+      <file leaf-file-name="TypeAndQuantityActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="45" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="1875">
+            <state line="52" column="59" selection-start="1698" selection-end="1748" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1725">
               <folding>
-                <element signature="e#3294#3323#0" expanded="true" />
-                <element signature="e#3420#3822#0" expanded="true" />
-                <element signature="e#3820#3821#0" expanded="true" />
-                <element signature="e#3873#4045#0" expanded="true" />
-                <element signature="e#4043#4044#0" expanded="true" />
+                <element signature="e#3253#3282#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypeAndQuantityActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java">
+      <file leaf-file-name="ResultsActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="74" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.1825" vertical-offset="167" max-vertical-offset="1980">
-              <folding />
+            <state line="151" column="0" selection-start="4618" selection-end="4618" vertical-scroll-proportion="0.0" vertical-offset="2782" max-vertical-offset="3375">
+              <folding>
+                <element signature="e#2430#2452#0" expanded="true" />
+                <element signature="e#2462#2490#0" expanded="true" />
+                <element signature="e#2495#2517#0" expanded="true" />
+                <element signature="e#2570#2598#0" expanded="true" />
+                <element signature="e#2645#2673#0" expanded="true" />
+                <element signature="e#2724#2752#0" expanded="true" />
+                <element signature="e#3321#3351#0" expanded="true" />
+                <element signature="e#3430#3460#0" expanded="true" />
+                <element signature="e#3620#3646#0" expanded="true" />
+                <element signature="e#3725#3751#0" expanded="true" />
+                <element signature="e#3908#3931#0" expanded="true" />
+                <element signature="e#4010#4033#0" expanded="true" />
+                <element signature="e#4367#4406#0" expanded="true" />
+                <element signature="e#4461#4498#0" expanded="true" />
+                <element signature="e#4790#4819#0" expanded="true" />
+                <element signature="e#5348#5824#0" expanded="true" />
+                <element signature="e#5813#5814#0" expanded="true" />
+                <element signature="e#7206#7235#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyDataActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="116" column="0" selection-start="4254" selection-end="4254" vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="3150">
+              <folding>
+                <element signature="e#4885#4914#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -220,12 +272,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/SelectionPlaceActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/MyPrefs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/InfoDomActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ArrayAdapterItem.java" />
@@ -234,6 +281,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositListActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/OnItemClickListenerListViewItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/UserTypeActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/InfoDomActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/objectJSON.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_infodom.xml" />
       </list>
     </option>
   </component>
@@ -774,7 +828,11 @@
       <created>1390049210485</created>
       <updated>1390049210485</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="version 0.2 - annotations&#10;">
+      <created>1390171673364</created>
+      <updated>1390171673364</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -804,7 +862,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -812,15 +870,15 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32755905" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32755905" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270142" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2609047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32440946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26132685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32385466" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -868,22 +926,13 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="version 0.1 - annotations" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 0.1 - annotations" />
+    <MESSAGE value="version 0.2 - annotations&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 0.2 - annotations&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/rest/clients/MaterialsResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/rest/ParseHeadersInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="1" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="450" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/rest/resources/ParseResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="23" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="435" />
@@ -892,7 +941,9 @@
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="28" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="630">
-          <folding />
+          <folding>
+            <element signature="e#1186#1225#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -976,13 +1027,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="47" selection-start="2138" selection-end="2138" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="5100">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/objectJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="1785">
           <folding />
         </state>
       </provider>
@@ -1078,13 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="32" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3150">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="43" selection-start="1770" selection-end="1770" vertical-scroll-proportion="0.39473686" vertical-offset="465" max-vertical-offset="3240">
@@ -1095,27 +1132,6 @@
     <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/activities/DepositListActivity_.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="78" column="0" selection-start="2030" selection-end="2030" vertical-scroll-proportion="2.55" vertical-offset="0" max-vertical-offset="1320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="32" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="47" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/InfoDomActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="4" selection-start="687" selection-end="733" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1005">
           <folding />
         </state>
       </provider>
@@ -1140,18 +1156,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="46" selection-start="172" selection-end="172" vertical-scroll-proportion="0.2625" vertical-offset="0" max-vertical-offset="735">
           <folding>
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
+            <element signature="e#485#486#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#545#546#0" expanded="false" />
+            <element signature="e#573#574#0" expanded="false" />
+            <element signature="e#615#616#0" expanded="false" />
+            <element signature="e#649#650#0" expanded="false" />
+            <element signature="e#681#682#0" expanded="false" />
+            <element signature="e#709#710#0" expanded="false" />
+            <element signature="e#751#752#0" expanded="false" />
+            <element signature="e#785#786#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1165,20 +1181,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1164" selection-end="1274" vertical-scroll-proportion="-2.6744187" vertical-offset="1215" max-vertical-offset="5505">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Deposito.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="21" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/OnItemClickListenerListViewItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="0" selection-start="938" selection-end="938" vertical-scroll-proportion="0.825" vertical-offset="0" max-vertical-offset="570">
@@ -1186,9 +1188,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ItemListParada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="111" selection-end="111" vertical-scroll-proportion="0.3" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Deposito.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="21" selection-start="117" selection-end="117" vertical-scroll-proportion="0.18844222" vertical-offset="0" max-vertical-offset="398">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/UserTypeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="3" selection-start="1055" selection-end="1235" vertical-scroll-proportion="0.30150753" vertical-offset="0" max-vertical-offset="1875">
+          <folding>
+            <element signature="e#3294#3323#0" expanded="true" />
+            <element signature="e#3420#3822#0" expanded="true" />
+            <element signature="e#3820#3821#0" expanded="true" />
+            <element signature="e#3873#4045#0" expanded="true" />
+            <element signature="e#4043#4044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="89" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+        <state line="23" column="4" selection-start="886" selection-end="934" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
           <folding>
             <element signature="e#1150#1179#0" expanded="true" />
             <element signature="e#1244#1273#0" expanded="true" />
@@ -1196,13 +1225,6 @@
             <element signature="e#1449#1478#0" expanded="true" />
             <element signature="e#2336#2365#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ItemListParada.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="111" selection-end="111" vertical-scroll-proportion="0.3" vertical-offset="0" max-vertical-offset="405">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1216,30 +1238,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/LoginActivity.java">
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="59" selection-start="1300" selection-end="1410" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1050">
+        <state line="4" column="47" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/UserTypeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="45" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="1875">
-          <folding>
-            <element signature="e#3294#3323#0" expanded="true" />
-            <element signature="e#3420#3822#0" expanded="true" />
-            <element signature="e#3820#3821#0" expanded="true" />
-            <element signature="e#3873#4045#0" expanded="true" />
-            <element signature="e#4043#4044#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="74" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.1825" vertical-offset="167" max-vertical-offset="1980">
+        <state line="52" column="59" selection-start="1698" selection-end="1748" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1725">
+          <folding>
+            <element signature="e#3253#3282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="0" selection-start="4618" selection-end="4618" vertical-scroll-proportion="0.0" vertical-offset="2782" max-vertical-offset="3375">
+          <folding>
+            <element signature="e#2430#2452#0" expanded="true" />
+            <element signature="e#2462#2490#0" expanded="true" />
+            <element signature="e#2495#2517#0" expanded="true" />
+            <element signature="e#2570#2598#0" expanded="true" />
+            <element signature="e#2645#2673#0" expanded="true" />
+            <element signature="e#2724#2752#0" expanded="true" />
+            <element signature="e#3321#3351#0" expanded="true" />
+            <element signature="e#3430#3460#0" expanded="true" />
+            <element signature="e#3620#3646#0" expanded="true" />
+            <element signature="e#3725#3751#0" expanded="true" />
+            <element signature="e#3908#3931#0" expanded="true" />
+            <element signature="e#4010#4033#0" expanded="true" />
+            <element signature="e#4367#4406#0" expanded="true" />
+            <element signature="e#4461#4498#0" expanded="true" />
+            <element signature="e#4790#4819#0" expanded="true" />
+            <element signature="e#5348#5824#0" expanded="true" />
+            <element signature="e#5813#5814#0" expanded="true" />
+            <element signature="e#7206#7235#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/activities/InfoDomActivity_.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.3316583" vertical-offset="363" max-vertical-offset="1395">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="4" selection-start="1300" selection-end="1410" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="79" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="705">
+          <folding>
+            <element signature="e#1186#1225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="0" selection-start="4254" selection-end="4254" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="3150">
+          <folding>
+            <element signature="e#4885#4914#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/InfoDomActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="4" selection-start="1127" selection-end="1136" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/objectJSON.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="92" selection-start="3848" selection-end="3848" vertical-scroll-proportion="0.0" vertical-offset="1464" max-vertical-offset="2070">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_infodom.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1830">
+          <folding>
+            <element signature="e#1234#1267#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

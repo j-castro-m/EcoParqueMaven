@@ -16,8 +16,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.TextChange;
 import com.googlecode.androidannotations.annotations.ViewById;
 import com.joelcastro.introduccionandroid.R;
 
@@ -26,7 +28,7 @@ import java.util.regex.Pattern;
 @EActivity(R.layout.activity_companydata)
 public class CompanyDataActivity extends Activity {
 
-    Bundle extra = this.getIntent().getExtras();
+    Bundle extra;
 
     @ViewById(R.id.textCIFCData1) EditText cif;
     @ViewById(R.id.textCNameCData1) EditText name;
@@ -80,197 +82,40 @@ public class CompanyDataActivity extends Activity {
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    @AfterViews
+    void setDataOnViews(){
+        extra = this.getIntent().getExtras();
+        cif.setText(extra.getString("cif"));
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.sectores_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-
-
-
-        final Bundle extra = this.getIntent().getExtras();
-           cif.setText(extra.getString("cif"));
-
-
-
-
-        cif.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {}
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Boolean bomail = correctMail(email,button_email);
-                Boolean bophone = correctPhone(phone,button_phone);
-                Boolean boweb = correctWeb(web,button_web);
-
-                if (valid(cif)&&bomail&&bophone&&boweb&&name.getText().toString().length()>0) {
-                    button_siguiente.setEnabled(true);
-                } else {
-                    button_siguiente.setEnabled(false);
-                }
-
-            }
-        }
-        );
-
-        name.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {}
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Boolean bomail = correctMail(email,button_email);
-                Boolean bophone = correctPhone(phone,button_phone);
-                Boolean boweb = correctWeb(web,button_web);
-
-                if (valid(cif)&&bomail&&bophone&&boweb&&name.getText().toString().length()>0) {
-                    button_siguiente.setEnabled(true);
-                } else {
-                    button_siguiente.setEnabled(false);
-                }
-
-            }
-        }
-        );
-
-        phone.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {}
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Boolean bomail = correctMail(email,button_email);
-                Boolean bophone = correctPhone(phone,button_phone);
-                Boolean boweb = correctWeb(web,button_web);
-
-
-
-                if (valid(cif)&&bomail&&bophone&&boweb&&name.getText().toString().length()>0) {
-                    button_siguiente.setEnabled(true);
-                } else {
-                    button_siguiente.setEnabled(false);
-                }
-
-            }
-        }
-        );
-
-        email.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {}
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Boolean bomail = correctMail(email,button_email);
-                Boolean bophone = correctPhone(phone,button_phone);
-                Boolean boweb = correctWeb(web,button_web);
-
-
-
-                if (valid(cif)&&bomail&&bophone&&boweb&&name.getText().toString().length()>0) {
-                    button_siguiente.setEnabled(true);
-                } else {
-                    button_siguiente.setEnabled(false);
-                }
-
-            }
-        }
-        );
-
-        web.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Boolean bomail = correctMail(email,button_email);
-                Boolean bophone = correctPhone(phone,button_phone);
-                Boolean boweb = correctWeb(web,button_web);
-
-                button_dominio.setEnabled(boweb);
-
-                if (valid(cif)&&bomail&&bophone&&boweb&&name.getText().toString().length()>0) {
-                    button_siguiente.setEnabled(true);
-                } else {
-                    button_siguiente.setEnabled(false);
-                }
-
-            }
-        }
-        );
-
-/*
-
-        button_dominio.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(CompanyDataActivity.this, InfoDomActivity.class);
-                intent.putExtra("url", web.getText().toString());
-                intent.putExtra("nombreParada",extra.getString("nombreParada"));
-                startActivity(intent);
-            }
-        });
-
-        button_siguiente.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(CompanyDataActivity.this, TypeAndQuantityActivity.class);
-                intent.putExtra("company",extra.getBoolean("company"));
-                intent.putExtra("email",email.getText().toString());
-                intent.putExtra("nombreParada",extra.getString("nombreParada"));
-                startActivity(intent);
-            }
-        });
-
-        button_email.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto",email.getText().toString(), null));
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Asunto");
-                startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
-            }
-        });
-
-        button_phone.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone.getText().toString()));
-                startActivity(intent);
-            }
-        });
-
-        button_web.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(web.getText().toString()));
-                startActivity(browserIntent);
-            }
-        });
-*/
-
-
     }
+
+
+
+
+
+
+    @TextChange({R.id.textCIFCData1,R.id.textCNameCData1,R.id.textPhoneCData1,R.id.textEmailCData1,R.id.textWebCData1})
+        public void enableButton(){
+            Boolean bomail = correctMail(email,button_email);
+            Boolean bophone = correctPhone(phone,button_phone);
+            Boolean boweb = correctWeb(web,button_web);
+
+            button_dominio.setEnabled(boweb);
+
+            if (valid(cif)&&bomail&&bophone&&boweb&&name.getText().toString().length()>0) {
+                button_siguiente.setEnabled(true);
+            } else {
+                button_siguiente.setEnabled(false);
+            }
+        }
+
+
+
 
 
     @Override

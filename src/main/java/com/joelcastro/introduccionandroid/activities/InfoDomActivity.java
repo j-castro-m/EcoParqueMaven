@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.ViewById;
 import com.joelcastro.introduccionandroid.R;
@@ -22,23 +25,22 @@ public class InfoDomActivity extends Activity {
     @ViewById(R.id.info_dom_city) TextView textCity;
     @ViewById(R.id.info_dom_country) TextView textCountry;
     @ViewById(R.id.info_dom_gps) TextView textGps;
+    Bundle extra;
+    GoogleMap mMap;
 
 
 
-    final Bundle extra = this.getIntent().getExtras();
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-        final Bundle extra = this.getIntent().getExtras();
+        @AfterViews
+        void setDataOnView(){
+        extra = this.getIntent().getExtras();
+        mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         urlView.setText(extra.getString("url"));
-        objectJSON json = new objectJSON(this,textIP,textCity,textCountry,textGps);
+        objectJSON json = new objectJSON(this,textIP,textCity,textCountry,textGps,mMap);
         json.execute(extra.getString("url"));
         String gps = json.getGps();
-    }
+
+        }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
