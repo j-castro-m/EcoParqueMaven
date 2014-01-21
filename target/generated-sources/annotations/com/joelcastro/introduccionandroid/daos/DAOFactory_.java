@@ -29,8 +29,8 @@ public final class DAOFactory_
         if (!(context_ instanceof Activity)) {
             return ;
         }
-        ((MaterialesSQLiteDAO_) materialesSQLiteDAO).afterSetContentView_();
         ((DepositoFakeDAO_) depositoFakeDAO).afterSetContentView_();
+        ((MaterialesSQLiteDAO_) materialesSQLiteDAO).afterSetContentView_();
         ((EcoParqueFakeDAO_) ecoParqueFakeDAO).afterSetContentView_();
         ((MaterialesFakeDAO_) materialesFakeDAO).afterSetContentView_();
     }
@@ -49,8 +49,8 @@ public final class DAOFactory_
         if (context_ instanceof Activity) {
             Activity activity = ((Activity) context_);
         }
-        materialesSQLiteDAO = MaterialesSQLiteDAO_.getInstance_(context_);
         depositoFakeDAO = DepositoFakeDAO_.getInstance_(context_);
+        materialesSQLiteDAO = MaterialesSQLiteDAO_.getInstance_(context_);
         ecoParqueFakeDAO = EcoParqueFakeDAO_.getInstance_(context_);
         materialesFakeDAO = MaterialesFakeDAO_.getInstance_(context_);
         initDAOs();

@@ -6,6 +6,7 @@ import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.Bean;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EViewGroup;
 import com.googlecode.androidannotations.annotations.ViewById;
@@ -14,13 +15,22 @@ import com.joelcastro.introduccionandroid.activities.CompanyDataActivity_;
 import com.joelcastro.introduccionandroid.activities.ResultsActivity_;
 import com.joelcastro.introduccionandroid.activities.TypeAndQuantityActivity;
 import com.joelcastro.introduccionandroid.activities.TypeAndQuantityActivity_;
+import com.joelcastro.introduccionandroid.daos.DAOFactory;
+import com.joelcastro.introduccionandroid.daos.DepositoDAO;
+import com.joelcastro.introduccionandroid.daos.DepositoMaterialDAO;
+import com.joelcastro.introduccionandroid.daos.fake.DepositoFakeDAO;
+import com.joelcastro.introduccionandroid.daos.fake.DepositoMaterialFakeDAO;
 import com.joelcastro.introduccionandroid.models.Deposito;
+import com.joelcastro.introduccionandroid.models.Material;
 
 /**
  * Created by alu03009 on 21/01/14.
  */
 @EViewGroup(R.layout.deposito_item_layout)
 public class DepositoListItemView extends RelativeLayout {
+    DAOFactory daoFactory = new DAOFactory();
+    @Bean(DepositoMaterialFakeDAO.class)
+    DepositoMaterialDAO depositoMaterialDAO = daoFactory.getDepositoMaterialDAO();
 
     @ViewById(R.id.depositoListItemIdAndWeight)
     TextView idAndWeigth;
@@ -59,9 +69,10 @@ public class DepositoListItemView extends RelativeLayout {
     @Click(R.id.depositoListItemFull)
     public void onAllClick(){
         Intent intent = new Intent().setClass(context, ResultsActivity_.class);
-        intent.putExtra("ITmat", deposito.getIt());
-        intent.putExtra("Fridge", deposito.getFridges());
-        intent.putExtra("Oil", deposito.getOil());
+        for(Material material : depositoMaterialDAO.getMateriales(deposito))
+        {
+            intent.putExtra(material.getName(),Boolean.TRUE);
+        }
         intent.putExtra("Peso", deposito.getPeso());
         intent.putExtra("cif", deposito.getDepositanteId());
         intent.putExtra("email","test@gmail.com");

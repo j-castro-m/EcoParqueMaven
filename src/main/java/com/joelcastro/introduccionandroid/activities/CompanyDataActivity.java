@@ -22,6 +22,7 @@ import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.TextChange;
 import com.googlecode.androidannotations.annotations.ViewById;
 import com.joelcastro.introduccionandroid.R;
+import com.joelcastro.introduccionandroid.models.Empresa;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -58,6 +59,8 @@ public class CompanyDataActivity extends Activity {
         intent.putExtra("company",extra.getBoolean("company"));
         intent.putExtra("email",email.getText().toString());
         intent.putExtra("nombreParada",extra.getString("nombreParada"));
+
+        intent.putExtra("empresa", new Empresa(cif.getText().toString(),name.getText().toString(),spinner.getPrompt().toString(),phone.getText().toString(),email.getText().toString(),web.getText().toString()));
         startActivity(intent);
     }
 

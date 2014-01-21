@@ -50,12 +50,7 @@ public class DepositoListActivity extends Activity {
     void onDepositoClick(int position)
     {
         Intent intent = new Intent().setClass(this, ResultsActivity_.class);
-        intent.putExtra("ITmat", depositoDAO.getAllDeposites().get(position).getIt());
-        intent.putExtra("Fridge", depositoDAO.getAllDeposites().get(position).getFridges());
-        intent.putExtra("Oil", depositoDAO.getAllDeposites().get(position).getOil());
-        intent.putExtra("Peso",depositoDAO.getAllDeposites().get(position).getPeso());
-        intent.putExtra("cif",depositoDAO.getAllDeposites().get(position).getDepositanteId());
-        intent.putExtra("email","test@gmail.com");
+        intent.putExtra("deposito", depositoDAO.getAllDeposites().get(position));
         //objectItemData[position].getId()
         //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);

@@ -21,12 +21,17 @@ import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.TextChange;
 import com.googlecode.androidannotations.annotations.ViewById;
+import com.googlecode.androidannotations.annotations.sharedpreferences.Pref;
 import com.joelcastro.introduccionandroid.R;
+import com.joelcastro.introduccionandroid.models.Deposito;
+import com.joelcastro.introduccionandroid.models.Empresa;
+import com.joelcastro.introduccionandroid.utils.MyPrefs_;
 
 @EActivity(R.layout.activity_typeandquantity)
 public class TypeAndQuantityActivity extends Activity {
 
-
+    @Pref
+    MyPrefs_ myPrefs;
      @ViewById(R.id.textWeightCData2) EditText peso;
      @ViewById(R.id.textCIFCData2) EditText cif;
 
@@ -37,15 +42,37 @@ public class TypeAndQuantityActivity extends Activity {
      @ViewById(R.id.checkBoxOil) CheckBox checkBoxOil;
 
      Bundle extra;
+        String fecha;
+        Boolean company;
+        Empresa empresa;
 
         @AfterViews
         void setDataonView(){
         extra = this.getIntent().getExtras();
-        cif.setText(extra.getString("cif"));
+            if(extra.get("deposito")==null){
+                cif.setText(extra.getString("cif"));
+                fecha ="";
+                company = extra.getBoolean("company");
+                if(company){
+                    empresa = (Empresa) extra.get("empresa");
+                }
+
+            }else
+            {
+                Deposito deposito = (Deposito)extra.get("deposito");
+                fecha = deposito.getFecha();
+                cif.setText(deposito.getDepositanteId());
+                peso.setText(deposito.getPeso());
+                company = deposito.getCompany();
+                if(company){
+                    empresa = new Empresa(deposito.getDepositanteId(),deposito.getNombre(),deposito.getSector(),deposito.getTelefono(),deposito.getEmail(),deposito.getWeb());
+                }
+            }
+
         }
 
         @Click(value={R.id.checkBoxIT,R.id.checkBoxFridge,R.id.checkBoxOil})
-        void onClickCehackBox(){
+        void onClickCheckBox(){
             checkMarkers(checkBoxIT, checkBoxFridge, checkBoxOil, button, peso);
         }
 
@@ -59,13 +86,29 @@ public class TypeAndQuantityActivity extends Activity {
        @Click(value=R.id.button_deposite)
        void onClickDeposite(){
            Intent intent = new Intent(getBaseContext(), ResultsActivity_.class);
-           intent.putExtra("cif",cif.getText().toString());
-           intent.putExtra("ITmat", checkBoxIT.isChecked());
-           intent.putExtra("Fridge", checkBoxFridge.isChecked());
-           intent.putExtra("Oil", checkBoxOil.isChecked());
-           intent.putExtra("Peso",peso.getText().toString());
-           intent.putExtra("company",extra.getBoolean("company"));
+
+           if(extra.getBoolean("company")){
+               intent.putExtra("empresa",(Empresa)extra.get("empresa"));
+           }
+
            intent.putExtra("email",extra.getString("email"));
+
+           if(extra.get("deposito")==null){
+           if(extra.getBoolean("company")){
+               intent.putExtra("desposito",new Deposito(0,myPrefs.idEcoParque().get(),extra.getString("cif"),fecha,String.valueOf(peso),empresa));
+           }else{
+               intent.putExtra("desposito", new Deposito(0, myPrefs.idEcoParque().get(), extra.getString("cif"), fecha, String.valueOf(peso)));
+           }
+           }
+           else
+           {
+               Deposito deposito = (Deposito)extra.get("deposito");
+               if(extra.getBoolean("company")){
+                   intent.putExtra("desposito",new Deposito(deposito.getId(),deposito.getIdEcoParque(),deposito.getDepositanteId(),fecha,String.valueOf(peso),empresa));
+               }else{
+                   intent.putExtra("desposito", new Deposito(deposito.getId(),deposito.getIdEcoParque(), deposito.getDepositanteId(), fecha, String.valueOf(peso)));
+               }
+           }
            startActivity(intent);
        }
 

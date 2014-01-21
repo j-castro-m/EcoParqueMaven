@@ -6,6 +6,7 @@ import com.googlecode.androidannotations.annotations.EBean;
 import com.googlecode.androidannotations.api.Scope;
 import com.joelcastro.introduccionandroid.daos.MaterialesDAO;
 import com.joelcastro.introduccionandroid.daos.fake.DepositoFakeDAO;
+import com.joelcastro.introduccionandroid.daos.fake.DepositoMaterialFakeDAO;
 import com.joelcastro.introduccionandroid.daos.fake.EcoParqueFakeDAO;
 import com.joelcastro.introduccionandroid.daos.fake.MaterialesFakeDAO;
 import com.joelcastro.introduccionandroid.daos.sqlite.DepositoSQLiteDAO;
@@ -29,12 +30,16 @@ public class DAOFactory {
     DepositoFakeDAO depositoFakeDAO;
 
     @Bean
+    DepositoMaterialFakeDAO depositoMaterialFakeDAO;
+
+    @Bean
     MaterialesSQLiteDAO materialesSQLiteDAO;
 
 
     MaterialesDAO materialesDAOSelected;
     EcoParqueDAO ecoParqueDAOSelected;
     DepositoDAO depositoDAOSelected;
+    DepositoMaterialDAO depositoMaterialDAOSelected;
 
     @AfterInject
     void initDAOs(){
@@ -42,6 +47,7 @@ public class DAOFactory {
             materialesDAOSelected = materialesFakeDAO;
             ecoParqueDAOSelected = ecoParqueFakeDAO;
             depositoDAOSelected = depositoFakeDAO;
+            depositoMaterialDAOSelected = depositoMaterialFakeDAO;
         } else {
             materialesDAOSelected = materialesSQLiteDAO;
         }
@@ -53,4 +59,8 @@ public class DAOFactory {
 
     public DepositoDAO getDepositosDAO(){return depositoDAOSelected;}
     public EcoParqueDAO getEcoParqueDAO(){return ecoParqueDAOSelected;}
+
+    public DepositoMaterialDAO getDepositoMaterialDAO() {
+        return depositoMaterialDAOSelected;
+    }
 }

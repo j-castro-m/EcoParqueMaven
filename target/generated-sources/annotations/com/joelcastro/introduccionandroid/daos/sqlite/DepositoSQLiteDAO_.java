@@ -41,6 +41,8 @@ public final class DepositoSQLiteDAO_
         if (context_ instanceof Activity) {
             Activity activity = ((Activity) context_);
         }
+        context = context_;
+        initOpenHelper();
     }
 
     public static DepositoSQLiteDAO_ getInstance_(Context context) {

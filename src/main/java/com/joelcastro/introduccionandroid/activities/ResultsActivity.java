@@ -21,17 +21,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.googlecode.androidannotations.annotations.AfterViews;
+import com.googlecode.androidannotations.annotations.Bean;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.ViewById;
 import com.googlecode.androidannotations.annotations.sharedpreferences.Pref;
 import com.joelcastro.introduccionandroid.R;
+import com.joelcastro.introduccionandroid.daos.DAOFactory;
+import com.joelcastro.introduccionandroid.daos.DepositoDAO;
+import com.joelcastro.introduccionandroid.daos.fake.DepositoFakeDAO;
+import com.joelcastro.introduccionandroid.models.Deposito;
+import com.joelcastro.introduccionandroid.models.Empresa;
 import com.joelcastro.introduccionandroid.utils.MyPrefs_;
 
 import java.util.Calendar;
 
 @EActivity(R.layout.activity_result)
 public class ResultsActivity extends Activity {
+    DAOFactory daoFactory = new DAOFactory();
+    @Bean(DepositoFakeDAO.class)
+    DepositoDAO depositoDAO = daoFactory.getDepositosDAO();
+
     private int mYear;
     private int mMonth;
     private int mDay;
@@ -74,8 +84,11 @@ public class ResultsActivity extends Activity {
     @AfterViews
     void setDataOnView(){
         extra = this.getIntent().getExtras();
+        Deposito deposito = (Deposito) extra.get("deposito");
 
-        peso = Double.parseDouble(extra.getString("Peso"));
+        peso = Double.parseDouble(deposito.getPeso());
+        cif.setText(deposito.getDepositanteId());
+
         precio = peso * 2.5;
         iva = precio * 0.2;
         double total = precio + iva;
@@ -87,19 +100,19 @@ public class ResultsActivity extends Activity {
         textTotal.setText(String.valueOf(total)+getString(R.string.currency));
 
 
-        if(extra.getBoolean("company"))
+        if(deposito.getCompany())
         {
             result_cost_text.setVisibility(View.VISIBLE);
             grid.setVisibility(View.VISIBLE);
             grid2.setVisibility(View.VISIBLE);
             linea.setVisibility(View.VISIBLE);
             enviaremail.setVisibility(View.VISIBLE);
-            email = extra.getString("email");
+            email = deposito.getEmail();
 
         }
 
         emailF = email;
-        cif.setText(extra.getString("cif"));
+
 
 
 
@@ -158,17 +171,39 @@ public class ResultsActivity extends Activity {
         @Click(value=R.id.button_reg_dep)
         void onRegistrateDepositClick(){
             Context context = getApplicationContext();
-            CharSequence text = getString(R.string.end_toast);
-            int duration = Toast.LENGTH_SHORT;
+            Deposito deposito = (Deposito) extra.get("deposito");
 
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
-            Intent intent = new  Intent(getBaseContext(), LoginActivity_.class);
-            // Indica que la aplicación debe cerrarse
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        }
+            if(deposito.getId()==0){
+                depositoDAO.addDeposito(deposito);
+            }
+            else{
+                depositoDAO.editDeposito(deposito);
+            }
+
+         /*   if(extra.get("desposito")==null)
+            {
+            if(extra.getBoolean("company")){
+                depositoDAO.addDeposito(new Deposito(0,myPrefs.idEcoParque().get(),extra.getString("cif"),date.getText().toString(),String.valueOf(peso),(Empresa)extra.get("empresa")));
+            }else{
+                depositoDAO.addDeposito(new Deposito(0,myPrefs.idEcoParque().get(),extra.getString("cif"),date.getText().toString(),String.valueOf(peso)));
+            }*/
+
+
+                CharSequence text = getString(R.string.end_toast);
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+                Intent intent = new  Intent(getBaseContext(), LoginActivity_.class);
+                // Indica que la aplicación debe cerrarse
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+
+
+
+
 
 
 

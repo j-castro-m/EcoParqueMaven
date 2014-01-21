@@ -12,7 +12,6 @@ public class Deposito implements Serializable {
     private String depositanteId;
     private String fecha;
     private String peso;
-    private Boolean it,oil,fridges;
     private Boolean company;
     private String nombre;
     private String sector;
@@ -20,20 +19,48 @@ public class Deposito implements Serializable {
     private String email;
     private String web;
 
-    public Deposito(int id,int idEcoParque, String depositanteId, String fecha, String peso, Boolean it, Boolean oil, Boolean fridges, Boolean company, String nombre, String sector, String telefono, String email, String web) {
+    public Deposito() {
+    }
+
+    public Deposito(int id,int idEcoParque, String depositanteId, String fecha, String peso, Boolean company, String nombre, String sector, String telefono, String email, String web) {
         this.id = id;
         this.depositanteId = depositanteId;
         this.fecha = fecha;
         this.peso = peso;
-        this.it = it;
-        this.oil = oil;
-        this.fridges = fridges;
         this.company = company;
         this.nombre = nombre;
         this.sector = sector;
         this.telefono = telefono;
         this.email = email;
         this.web = web;
+        this.idEcoParque=idEcoParque;
+    }
+
+    public Deposito(int id,int idEcoParque, String depositanteId, String fecha, String peso) {
+        this.id = id;
+        this.depositanteId = depositanteId;
+        this.fecha = fecha;
+        this.peso = peso;
+        this.company=Boolean.FALSE;
+        this.idEcoParque=idEcoParque;
+        this.nombre="";
+        this.sector="";
+        this.telefono="";
+        this.email="";
+        this.web="";
+    }
+
+    public Deposito(int id,int idEcoParque, String depositanteId, String fecha, String peso, Empresa empresa) {
+        this.id = id;
+        this.depositanteId = depositanteId;
+        this.fecha = fecha;
+        this.peso = peso;
+        this.company = Boolean.TRUE;
+        this.nombre = empresa.getNombre();
+        this.sector = empresa.getSector();
+        this.telefono = empresa.getTelefono();
+        this.email = empresa.getEmail();
+        this.web = empresa.getWeb();
         this.idEcoParque=idEcoParque;
     }
 
@@ -67,30 +94,6 @@ public class Deposito implements Serializable {
 
     public void setPeso(String peso) {
         this.peso = peso;
-    }
-
-    public Boolean getIt() {
-        return it;
-    }
-
-    public void setIt(Boolean it) {
-        this.it = it;
-    }
-
-    public Boolean getOil() {
-        return oil;
-    }
-
-    public void setOil(Boolean oil) {
-        this.oil = oil;
-    }
-
-    public Boolean getFridges() {
-        return fridges;
-    }
-
-    public void setFridges(Boolean fridges) {
-        this.fridges = fridges;
     }
 
     public Boolean getCompany() {

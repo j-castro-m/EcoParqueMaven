@@ -36,7 +36,7 @@ public class MaterialesSQLiteDAO implements MaterialesDAO {
     @Override
     public List<Material> getAllMateriales() {
         SQLiteDatabase db = openHelper.getReadableDatabase();
-        Cursor query = db.query(openHelper.MATERIALES_TABLE_NAME,null,null,null,null,null,null);// Comprobar esta query
+        Cursor query = db.query(openHelper.MATERIALES_TABLE_NAME,null,null,null,null,null,null);
         List<Material> materiales = new ArrayList<Material>();
 
         while (!query.isLast()){
@@ -51,8 +51,8 @@ public class MaterialesSQLiteDAO implements MaterialesDAO {
 
     private Material buildMaterialFromCursor(Cursor query) {
         Material material = new Material();
-        material.setId(query.getLong(query.getColumnIndex("id")));
-        //Aquí faltan cosas
+        material.setId((int) query.getInt(query.getColumnIndex("id")));
+        material.setName(query.getString(query.getColumnIndex("name")));
         return material;
     }
 }

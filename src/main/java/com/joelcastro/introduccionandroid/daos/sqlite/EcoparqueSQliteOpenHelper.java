@@ -11,6 +11,8 @@ public class EcoparqueSQliteOpenHelper extends SQLiteOpenHelper {
 
 
     public static final String MATERIALES_TABLE_NAME = "materiales";
+    public static final String ECOPARQUE_TABLE_NAME = "ecoparques";
+    public static final String DEPOSITOS_TABLE_NAME = "depositos";
 
     // Crear constantes con los nombres de las columnas
 
@@ -21,9 +23,31 @@ public class EcoparqueSQliteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE "+MATERIALES_TABLE_NAME); // esta sentencia no es valida, ojo
+        db.execSQL("CREATE TABLE "+MATERIALES_TABLE_NAME+"(id INT, name TEXT)");
+        db.execSQL("CREATE TABLE "+ECOPARQUE_TABLE_NAME+"(id INT, image TEXT, lugar TEXT)");
+        db.execSQL("CREATE TABLE "+DEPOSITOS_TABLE_NAME+"(id INT,"
+                                                        +" depositanteid TEXT,"
+                                                        +" fecha TEXT,"
+                                                        +" peso TEXT,"
+                                                        +" company BOOLEAN,"
+                                                        +" nombre TEXT,"
+                                                        +" sector TEXT,"
+                                                        +" telefono TEXT,"
+                                                        +" email TEXT,"
+                                                        +" web TEXT,"
+                                                        +")");
 
-        // aquí los insert
+
+        db.execSQL("INSERT INTO "+MATERIALES_TABLE_NAME+" VALUES (1, 'Material informático')");
+        db.execSQL("INSERT INTO "+MATERIALES_TABLE_NAME+" VALUES (2, 'Neveras')");
+        db.execSQL("INSERT INTO "+MATERIALES_TABLE_NAME+" VALUES (3, 'Aceites usados')");
+
+        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+"VALUES (1,'San Jose - Las Fuentes','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
+        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+"VALUES (2,'Cogullada','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
+        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+"VALUES (3,'Universidad - Delicias','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
+        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+"VALUES (4,'Valdespartera','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
+
+
     }
 
     @Override
