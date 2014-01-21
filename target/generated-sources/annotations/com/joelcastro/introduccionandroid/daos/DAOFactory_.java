@@ -30,13 +30,13 @@ public final class DAOFactory_
         if (!(context_ instanceof Activity)) {
             return ;
         }
-        ((MaterialesSQLiteDAO_) materialesSQLiteDAO).afterSetContentView_();
-        ((DepositoFakeDAO_) depositoFakeDAO).afterSetContentView_();
-        ((EcoParqueFakeDAO_) ecoParqueFakeDAO).afterSetContentView_();
-        ((DepositoFakeDAO_) depositoSQLiteDAO).afterSetContentView_();
         ((DepositoMaterialFakeDAO_) depositoMaterialSQLiteDAO).afterSetContentView_();
+        ((EcoParqueFakeDAO_) ecoParqueFakeDAO).afterSetContentView_();
         ((EcoParqueFakeDAO_) ecoParqueSQLiteDAO).afterSetContentView_();
+        ((MaterialesSQLiteDAO_) materialesSQLiteDAO).afterSetContentView_();
+        ((DepositoFakeDAO_) depositoSQLiteDAO).afterSetContentView_();
         ((DepositoMaterialFakeDAO_) depositoMaterialFakeDAO).afterSetContentView_();
+        ((DepositoFakeDAO_) depositoFakeDAO).afterSetContentView_();
         ((MaterialesFakeDAO_) materialesFakeDAO).afterSetContentView_();
     }
 
@@ -54,13 +54,13 @@ public final class DAOFactory_
         if (context_ instanceof Activity) {
             Activity activity = ((Activity) context_);
         }
-        materialesSQLiteDAO = MaterialesSQLiteDAO_.getInstance_(context_);
-        depositoFakeDAO = DepositoFakeDAO_.getInstance_(context_);
-        ecoParqueFakeDAO = EcoParqueFakeDAO_.getInstance_(context_);
-        depositoSQLiteDAO = DepositoFakeDAO_.getInstance_(context_);
         depositoMaterialSQLiteDAO = DepositoMaterialFakeDAO_.getInstance_(context_);
+        ecoParqueFakeDAO = EcoParqueFakeDAO_.getInstance_(context_);
         ecoParqueSQLiteDAO = EcoParqueFakeDAO_.getInstance_(context_);
+        materialesSQLiteDAO = MaterialesSQLiteDAO_.getInstance_(context_);
+        depositoSQLiteDAO = DepositoFakeDAO_.getInstance_(context_);
         depositoMaterialFakeDAO = DepositoMaterialFakeDAO_.getInstance_(context_);
+        depositoFakeDAO = DepositoFakeDAO_.getInstance_(context_);
         materialesFakeDAO = MaterialesFakeDAO_.getInstance_(context_);
         initDAOs();
     }

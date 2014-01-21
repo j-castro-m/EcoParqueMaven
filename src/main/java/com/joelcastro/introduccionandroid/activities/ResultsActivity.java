@@ -253,9 +253,9 @@ public class ResultsActivity extends Activity {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 final Calendar calendario= Calendar.getInstance();
-                mYear=calendario.get(Calendar.YEAR);
-                mMonth=calendario.get(Calendar.MONTH);
-                mDay=calendario.get(Calendar.DAY_OF_MONTH);
+                mYear=year;
+                mMonth=monthOfYear+1;
+                mDay=dayOfMonth;
                 date.setText(mDay+"/"+mMonth+"/"+mYear);
             }
         },mYear,mMonth,mDay);
