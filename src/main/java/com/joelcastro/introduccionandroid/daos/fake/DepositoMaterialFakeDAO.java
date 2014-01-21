@@ -14,22 +14,22 @@ import java.util.List;
 @EBean
 public class DepositoMaterialFakeDAO implements DepositoMaterialDAO {
     @Override
-    public List<Integer> getMateriales(Deposito deposito) {
-        List<Integer> data = new ArrayList<Integer>();
+    public List<String> getMateriales(Deposito deposito) {
+        List<String> data = new ArrayList<String>();
 
-        data.add(1);
-        data.add(2);
-        data.add(3);
+        data.add("1");
+        data.add("2");
+        data.add("3");
 
         return data;
     }
 
-    public void addDepositoMaterial(int idMaterial, int idDeposito) {
+    public void addDepositoMaterial(String idMaterial, String idDeposito) {
 
     }
 
     @Override
-    public void deleteDepositoMaterial(int idMaterial, int idDeposito) {
+    public void deleteDepositoMaterial(String idMaterial, String idDeposito) {
 
     }
 }

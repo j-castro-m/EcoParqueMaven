@@ -23,26 +23,27 @@ public class EcoParqueFakeDAO implements EcoParqueDAO {
     public List<EcoParque> getAllEcoParques() {
 
         List<EcoParque> objectItemData = new ArrayList<EcoParque>();
-        objectItemData.add(new EcoParque(1, "San Jose - Las Fuentes","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png"));
-        objectItemData.add(new EcoParque(2, "Cogullada","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png"));
-        objectItemData.add(new EcoParque(4, "Universidad - Delicias","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png"));
-        objectItemData.add(new EcoParque(3, "Valdespartera","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png"));
+        objectItemData.add(new EcoParque("1", "San Jose - Las Fuentes","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png"));
+        objectItemData.add(new EcoParque("2", "Cogullada","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png"));
+        objectItemData.add(new EcoParque("4", "Universidad - Delicias","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png"));
+        objectItemData.add(new EcoParque("3", "Valdespartera","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png"));
         return objectItemData;
     }
 
     @Override
-    public EcoParque getEcoParque(int idEcoParque) {
-        switch(idEcoParque){
+    public EcoParque getEcoParque(String idEcoParque) {
+        int valueInt = Integer.valueOf(idEcoParque);
+        switch(valueInt){
             case 1:
-                return new EcoParque(1, "San Jose - Las Fuentes","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+                return new EcoParque("1", "San Jose - Las Fuentes","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
             case 2:
-                return new EcoParque(2, "Cogullada","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+                return new EcoParque("2", "Cogullada","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
             case 3:
-                return new EcoParque(3, "Valdespartera","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+                return new EcoParque("3", "Valdespartera","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
             case 4:
-                return new EcoParque(4, "Universidad - Delicias","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+                return new EcoParque("4", "Universidad - Delicias","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
             default:
-                return new EcoParque(4, "Universidad - Delicias","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+                return new EcoParque("4", "Universidad - Delicias","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
         }
     }
 }

@@ -18,8 +18,8 @@ public interface MyPrefs {
     @DefaultString("")
     String pass();
 
-    @DefaultInt(0)
-    int idEcoParque();
+    @DefaultString("0")
+    String idEcoParque();
 
     @DefaultString("")
     String lugarEcoParque();

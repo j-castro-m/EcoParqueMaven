@@ -9,23 +9,23 @@ import java.io.Serializable;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Material implements Serializable {
-    private int id;
+    private String id_material;
     private String name;
 
     public Material() {
     }
 
-    public Material(int id, String name) {
-        this.id = id;
+    public Material(String id_material, String name) {
+        this. id_material = id_material;
         this.name = name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id_material =  id_material;
     }
 
-    public int getId() {
-        return id;
+    public String getId() {
+        return  id_material;
     }
 
     public String getName() {

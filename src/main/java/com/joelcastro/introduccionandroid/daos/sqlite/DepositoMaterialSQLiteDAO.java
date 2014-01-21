@@ -10,6 +10,7 @@ import com.googlecode.androidannotations.annotations.RootContext;
 import com.googlecode.androidannotations.api.Scope;
 import com.joelcastro.introduccionandroid.daos.DepositoMaterialDAO;
 import com.joelcastro.introduccionandroid.models.Deposito;
+import com.joelcastro.introduccionandroid.models.DepositoMaterial;
 import com.joelcastro.introduccionandroid.models.Material;
 
 import java.util.ArrayList;
@@ -31,32 +32,42 @@ public class DepositoMaterialSQLiteDAO implements DepositoMaterialDAO {
         openHelper = new EcoparqueSQliteOpenHelper(context);
     }
     @Override
-    public List<Integer> getMateriales(Deposito deposito) {
+    public List<String> getMateriales(Deposito deposito) {
         SQLiteDatabase db = openHelper.getReadableDatabase();
-        Cursor query = db.rawQuery("SELECT * FROM "+EcoparqueSQliteOpenHelper.DEPOSITOSMATERIAL_TABLE_NAME+" WHERE iddeposito="+deposito.getId()+";",null);
-        List<Integer> materiales = new ArrayList<Integer>();
+        Cursor query = db.rawQuery("SELECT * FROM "+EcoparqueSQliteOpenHelper.DEPOSITOSMATERIAL_TABLE_NAME+" WHERE id_deposito='"+deposito.getId()+"'",null);
+        List<String > materiales = new ArrayList<String>();
         query.moveToFirst();
         for(int i=0;i<query.getCount();i++){
-            Integer material = MaterialesSQLiteDAO.buildMaterialFromCursor(query).getId();
+            String material = buildDepositoMaterialFromCursor(query).getIdMaterial();
             materiales.add(material);
             query.moveToNext();
         }
         query.close();
-        db.close();
         return materiales;
     }
 
     @Override
-    public void addDepositoMaterial(int idMaterial, int idDeposito) {
+    public void addDepositoMaterial(String idMaterial, String idDeposito) {
         SQLiteDatabase db = openHelper.getReadableDatabase();
-        db.execSQL("INSERT INTO "+EcoparqueSQliteOpenHelper.DEPOSITOSMATERIAL_TABLE_NAME+" VALUES("+idMaterial+","+idDeposito+");");
-        db.close();
+        db.execSQL("INSERT INTO "+EcoparqueSQliteOpenHelper.DEPOSITOSMATERIAL_TABLE_NAME+" VALUES('"+idMaterial+"','"+idDeposito+"')");
+
     }
 
     @Override
-    public void deleteDepositoMaterial(int idMaterial, int idDeposito) {
+    public void deleteDepositoMaterial(String idMaterial, String idDeposito) {
         SQLiteDatabase db = openHelper.getReadableDatabase();
-        db.execSQL("DELETE "+EcoparqueSQliteOpenHelper.DEPOSITOSMATERIAL_TABLE_NAME+" WHERE idmaterial="+idMaterial+" AND iddeposito="+idDeposito+";");
-        db.close();
+        try{
+        db.execSQL("DELETE FROM "+EcoparqueSQliteOpenHelper.DEPOSITOSMATERIAL_TABLE_NAME+" WHERE id_material='"+idMaterial+"' AND id_deposito='"+idDeposito+"'");
+        }catch(Exception ex){
+
+        }
+    }
+
+    public static DepositoMaterial buildDepositoMaterialFromCursor(Cursor query) {
+
+        DepositoMaterial depositoMaterial = new DepositoMaterial();
+        depositoMaterial.setIdMaterial(query.getString(query.getColumnIndex("id_material")));
+        depositoMaterial.setIdDeposito(query.getString(query.getColumnIndex("id_deposito")));
+        return depositoMaterial;
     }
 }

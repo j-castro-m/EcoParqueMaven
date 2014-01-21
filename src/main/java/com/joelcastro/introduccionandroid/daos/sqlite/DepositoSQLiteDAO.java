@@ -42,15 +42,14 @@ public class DepositoSQLiteDAO implements DepositoDAO {
             depositos.add(deposito);
             query.moveToNext();
         }
-        query.close();
-        db.close();
+        //db.close();
         return depositos;
     }
 
     @Override
-    public List<Deposito> getDepositesFromEcoParque(int idEcoParque) {
+    public List<Deposito> getDepositesFromEcoParque(String idEcoParque) {
         SQLiteDatabase db = openHelper.getReadableDatabase();
-        Cursor query = db.rawQuery("SELECT * FROM " + EcoparqueSQliteOpenHelper.DEPOSITOS_TABLE_NAME + "WHERE idecoparque=" + idEcoParque, null);
+        Cursor query = db.rawQuery("SELECT * FROM " + EcoparqueSQliteOpenHelper.DEPOSITOS_TABLE_NAME + "WHERE id_ecoparque='" + idEcoParque+"'", null);
         List<Deposito> depositos = new ArrayList<Deposito>();
         query.moveToFirst();
         for(int i=0;i<query.getCount();i++){
@@ -59,57 +58,76 @@ public class DepositoSQLiteDAO implements DepositoDAO {
             query.moveToNext();
         }
         query.close();
-        db.close();
+        //db.close();
         return depositos; }
     
 
     @Override
-    public void addDeposito(Deposito deposito) {
+    public String addDeposito(Deposito deposito) {
         SQLiteDatabase db = openHelper.getWritableDatabase();
-        deposito.setId(getAllDeposites().size()+1);
+        deposito.setId(String.valueOf(getAllDeposites().size()+1));
+        int boolCompany;
+        if(deposito.getCompany()){
+            boolCompany = 1;
+        }else
+        {
+            boolCompany=0;
+        }
         db.execSQL("INSERT INTO "+EcoparqueSQliteOpenHelper.DEPOSITOS_TABLE_NAME+" VALUES("+
-                deposito.getId()+","+
-                deposito.getIdEcoParque()+","+
+                "'"+deposito.getId()+"'"+","+
+                "'"+deposito.getIdEcoParque()+"'"+","+
                 "'"+deposito.getDepositanteId()+"'"+","+
                 "'"+deposito.getFecha()+"'"+","+
-                deposito.getCompany().toString()+","+
+                "'"+deposito.getPeso()+"'"+","+
+                boolCompany+","+
                 "'"+deposito.getNombre()+"'"+","+
                 "'"+deposito.getSector()+"'"+","+
                 "'"+deposito.getTelefono()+"'"+","+
                 "'"+deposito.getEmail()+"'"+","+
                 "'"+deposito.getWeb()+"'"+")"
                 );
-        db.close();
+        return String.valueOf(getAllDeposites().size());
     }
 
     @Override
     public void editDeposito(Deposito deposito) {
         SQLiteDatabase db = openHelper.getWritableDatabase();
-        db.execSQL("DELETE FROM "+EcoparqueSQliteOpenHelper.DEPOSITOS_TABLE_NAME+" WHERE id ="+deposito.getId()+";");
+        int boolCompany;
+        if(deposito.getCompany()){
+            boolCompany = 1;
+        }else
+        {
+            boolCompany=0;
+        }
+        db.execSQL("DELETE FROM "+EcoparqueSQliteOpenHelper.DEPOSITOS_TABLE_NAME+" WHERE id_deposito ='"+deposito.getId()+"'");
         db.execSQL("INSERT INTO "+EcoparqueSQliteOpenHelper.DEPOSITOS_TABLE_NAME+" VALUES("+
-                deposito.getId()+","+
-                deposito.getIdEcoParque()+","+
+                "'"+deposito.getId()+"'"+","+
+                "'"+deposito.getIdEcoParque()+"'"+","+
                 "'"+deposito.getDepositanteId()+"'"+","+
                 "'"+deposito.getFecha()+"'"+","+
-                deposito.getCompany().toString()+","+
+                "'"+deposito.getPeso()+"'"+","+
+                boolCompany+","+
                 "'"+deposito.getNombre()+"'"+","+
                 "'"+deposito.getSector()+"'"+","+
                 "'"+deposito.getTelefono()+"'"+","+
                 "'"+deposito.getEmail()+"'"+","+
                 "'"+deposito.getWeb()+"'"+")"
         );
-        db.close();
+
+        //db.close();
     }
 
     private Deposito buildDepositoFromCursor(Cursor query) {
         Deposito deposito = new Deposito();
-        deposito.setId(query.getInt(query.getColumnIndex("id")));
-        deposito.setIdEcoParque(query.getInt(query.getColumnIndex("idecoparque")));
+
+        deposito.setId(query.getString(query.getColumnIndex("id_deposito")));
+        deposito.setIdEcoParque(query.getString(query.getColumnIndex("id_ecoparque")));
 
         deposito.setDepositanteId(query.getString(query.getColumnIndex("depositanteid")));
         deposito.setFecha(query.getString(query.getColumnIndex("fecha")));
         deposito.setPeso(query.getString(query.getColumnIndex("peso")));
-        deposito.setCompany(Boolean.getBoolean(query.getString(query.getColumnIndex("company"))));
+
+        deposito.setCompany((query.getString(query.getColumnIndex("company"))).equals("1"));
         deposito.setNombre(query.getString(query.getColumnIndex("nombre")));
         deposito.setSector(query.getString(query.getColumnIndex("sector")));
         deposito.setTelefono(query.getString(query.getColumnIndex("telefono")));

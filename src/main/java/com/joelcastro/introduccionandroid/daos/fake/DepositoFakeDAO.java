@@ -21,31 +21,31 @@ public class DepositoFakeDAO implements DepositoDAO {
     @Override
     public List<Deposito> getAllDeposites() {
         List<Deposito> objectItemData = new ArrayList<Deposito>();
-        objectItemData.add(new Deposito(1,1,"18056045X","10/1/2013","35"));
-        objectItemData.add(new Deposito(2,1,"18056045X","14/1/2013","65"));
-        objectItemData.add(new Deposito(4,1,"18056045X","10/1/2014","59"));
-        objectItemData.add(new Deposito(3,2,"18056045X","16/1/2014","87"));
+        objectItemData.add(new Deposito("1","1","18056045X","10/1/2013","35"));
+        objectItemData.add(new Deposito("2","1","18056045X","14/1/2013","65"));
+        objectItemData.add(new Deposito("4","1","18056045X","10/1/2014","59"));
+        objectItemData.add(new Deposito("3","2","18056045X","16/1/2014","87"));
         return objectItemData;
 
     }
 
     @Override
-    public List<Deposito> getDepositesFromEcoParque(int idEcoParque) {
+    public List<Deposito> getDepositesFromEcoParque(String idEcoParque) {
         List<Deposito> objectItemData = new ArrayList<Deposito>();
-        if(idEcoParque == 1){
-            objectItemData.add(new Deposito(1,1,"18056045X","10/1/2013","35"));
-            objectItemData.add(new Deposito(2,1,"18056045X","14/1/2013","65"));
-            objectItemData.add(new Deposito(4,1,"18056045X","10/1/2014","59"));
-        }else if(idEcoParque == 2){
-            objectItemData.add(new Deposito(3,2,"18056045X","16/1/2014","87"));
+        if(idEcoParque.equals("1")){
+            objectItemData.add(new Deposito("1","1","18056045X","10/1/2013","35"));
+            objectItemData.add(new Deposito("2","1","18056045X","14/1/2013","65"));
+            objectItemData.add(new Deposito("4","1","18056045X","10/1/2014","59"));
+        }else if(idEcoParque.equals("2")){
+            objectItemData.add(new Deposito("3","2","18056045X","16/1/2014","87"));
         }
             return objectItemData;
 
     }
 
     @Override
-    public void addDeposito(Deposito deposito) {
-
+    public String addDeposito(Deposito deposito) {
+        return deposito.getId();
     }
 
     @Override

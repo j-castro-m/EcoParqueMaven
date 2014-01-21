@@ -9,8 +9,8 @@ import java.util.List;
  * Created by alu03009 on 21/01/14.
  */
 public interface DepositoMaterialDAO {
-    public List<Integer> getMateriales(Deposito deposito);
+    public List<String> getMateriales(Deposito deposito);
 
-    public void addDepositoMaterial(int idMaterial, int idDeposito);
-    public void deleteDepositoMaterial(int idMaterial, int idDeposito);
+    public void addDepositoMaterial(String idMaterial, String idDeposito);
+    public void deleteDepositoMaterial(String idMaterial, String idDeposito);
 }

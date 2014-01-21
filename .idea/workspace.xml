@@ -40,8 +40,24 @@
   <component name="ChangeListManager">
     <list default="true" id="4fa7656d-4060-499b-9cbd-29030f71a065" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/daos/DAOFactory_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/daos/DAOFactory_.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Deposito.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Deposito.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoFakeDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoFakeDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/DepositoMaterial.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/DepositoMaterial.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoMaterialDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoMaterialDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoMaterialFakeDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoMaterialFakeDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoMaterialSQLiteDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoMaterialSQLiteDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoSQLiteDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoSQLiteDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/EcoParque.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/EcoParque.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/EcoParqueDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/EcoParqueDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/EcoParqueFakeDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/EcoParqueFakeDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoParqueSQLiteDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoParqueSQLiteDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoparqueSQliteOpenHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoparqueSQliteOpenHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Material.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Material.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/MaterialesSQLiteDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/MaterialesSQLiteDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/MyPrefs.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/MyPrefs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ecoparque.iws" />
@@ -111,28 +127,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EcoparqueListActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/EcoparqueListActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="1140">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="EcoparqueSQliteOpenHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoparqueSQliteOpenHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="57" selection-start="2781" selection-end="2781" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="945">
+            <state line="52" column="0" selection-start="2937" selection-end="2937" vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="945">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EcoParque.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/EcoParque.java">
+      <file leaf-file-name="ResultsActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="8" selection-start="369" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="600">
+            <state line="265" column="0" selection-start="8545" selection-end="8545" vertical-scroll-proportion="0.0" vertical-offset="3397" max-vertical-offset="3990">
+              <folding>
+                <element signature="e#3821#3843#0" expanded="true" />
+                <element signature="e#3853#3881#0" expanded="true" />
+                <element signature="e#3886#3908#0" expanded="true" />
+                <element signature="e#3961#3989#0" expanded="true" />
+                <element signature="e#4036#4064#0" expanded="true" />
+                <element signature="e#4115#4143#0" expanded="true" />
+                <element signature="e#4852#4882#0" expanded="true" />
+                <element signature="e#4961#4991#0" expanded="true" />
+                <element signature="e#5141#5167#0" expanded="true" />
+                <element signature="e#5246#5272#0" expanded="true" />
+                <element signature="e#5421#5444#0" expanded="true" />
+                <element signature="e#5523#5546#0" expanded="true" />
+                <element signature="e#5882#5921#0" expanded="true" />
+                <element signature="e#5976#6013#0" expanded="true" />
+                <element signature="e#7412#7441#0" expanded="true" />
+                <element signature="e#8017#8493#0" expanded="true" />
+                <element signature="e#8482#8483#0" expanded="true" />
+                <element signature="e#9164#9193#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DepositoFakeDAO_.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/daos/fake/DepositoFakeDAO_.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="12" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
               <folding />
             </state>
           </provider>
@@ -141,41 +176,79 @@
       <file leaf-file-name="MaterialesSQLiteDAO.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/MaterialesSQLiteDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="5" selection-start="1463" selection-end="1745" vertical-scroll-proportion="0.0" vertical-offset="354" max-vertical-offset="765">
+            <state line="51" column="4" selection-start="1493" selection-end="1782" vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepositoSQLiteDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoSQLiteDAO.java">
+      <file leaf-file-name="DepositoFakeDAO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoFakeDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="4" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1725">
-              <folding>
-                <element signature="e#1864#1874#0" expanded="true" />
-              </folding>
+            <state line="47" column="32" selection-start="1774" selection-end="1774" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="810">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepositoMaterialSQLiteDAO.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DepositoMaterialSQLiteDAO.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoMaterialSQLiteDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="1020">
+            <state line="59" column="32" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.8694362" vertical-offset="382" max-vertical-offset="975">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1334#1343#0" expanded="true" />
+                <element signature="e#1402#1410#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EcoParqueSQLiteDAO.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoParqueSQLiteDAO.java">
+      <file leaf-file-name="TypeAndQuantityActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.3640898" vertical-offset="484" max-vertical-offset="885">
+            <state line="134" column="69" selection-start="4798" selection-end="4798" vertical-scroll-proportion="0.0" vertical-offset="2460" max-vertical-offset="3300">
               <folding>
-                <element signature="e#1167#1178#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#4445#4453#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DepositoMaterialFakeDAO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoMaterialFakeDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="64" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="525">
+              <folding>
+                <element signature="e#589#597#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DepositoMaterialDAO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoMaterialDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DepositoMaterial.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/DepositoMaterial.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="31" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+              <folding>
+                <element signature="e#415#416#0" expanded="true" />
+                <element signature="e#448#449#0" expanded="true" />
+                <element signature="e#500#501#0" expanded="true" />
+                <element signature="e#544#545#0" expanded="true" />
+                <element signature="e#581#582#0" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
+                <element signature="e#710#711#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -211,7 +284,6 @@
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ArrayAdapterEcoParque.java" />
         <option value="$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/utils/MyPrefs_.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/MyPrefs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/MaterialesFakeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/MaterialesDAO.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_deposito_menu.xml" />
@@ -220,31 +292,32 @@
         <option value="$PROJECT_DIR$/res/layout/activity_depositos_list.xml" />
         <option value="$PROJECT_DIR$/res/layout/deposito_item_layout.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ArrayAdapterDeposito.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/EcoParqueDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/EcoParqueFakeDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Material.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/DepositoMaterial.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/EmpresaDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Empresa.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoFakeDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Deposito.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoMaterialSQLDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/MaterialesSQLiteDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoSQLiteDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoMaterialDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoMaterialSQLiteDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoMaterialFakeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/DepositoListItemView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoparqueSQliteOpenHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DAOFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositoListActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/EcoparqueListActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/EcoParque.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Material.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/MyPrefs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/EcoParqueFakeDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/EcoParqueDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoMaterialDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoMaterialFakeDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoparqueSQliteOpenHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoParqueSQLiteDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/MaterialesSQLiteDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Deposito.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoSQLiteDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoFakeDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/DepositoMaterial.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoMaterialSQLiteDAO.java" />
       </list>
     </option>
   </component>
@@ -308,7 +381,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -611,7 +684,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -649,26 +722,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Android Application.And+Mvn">
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -691,25 +744,32 @@
       </MavenSettings>
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -737,6 +797,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -939,7 +1012,11 @@
       <created>1390285451192</created>
       <updated>1390285451192</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="version 1.3 - Compilado con DAOSQLite,implementadas todas las funciones, falta resolver bugs y checkedbox">
+      <created>1390286067072</created>
+      <updated>1390286067072</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -976,20 +1053,20 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30805686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32385466" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3064771" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4044234" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26171243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31753555" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32755905" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1002,20 +1079,20 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26171243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26171243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32755905" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40126383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30866143" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32440946" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30708662" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6062992" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1043,32 +1120,23 @@
     <MESSAGE value="version 0.7 - annotations and DAO ListViews funcionando al 100%&#10;" />
     <MESSAGE value="version 1.1 - DAOSQLite con Creacion de Tablas, Materiales 100%,  Depositos 100%&#10;" />
     <MESSAGE value="version 1.2 - Compilado con DAOSQLite, implementadas en DAO 90% de las funciones, falta guardar informacion CheckBox&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.2 - Compilado con DAOSQLite, implementadas en DAO 90% de las funciones, falta guardar informacion CheckBox&#10;" />
+    <MESSAGE value="version 1.3 - Compilado con DAOSQLite,implementadas todas las funciones, falta resolver bugs y checkedbox" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.3 - Compilado con DAOSQLite,implementadas todas las funciones, falta resolver bugs y checkedbox" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_infodom.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_infodom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1830">
           <folding>
             <element signature="e#1234#1267#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/objectJSON.java">
@@ -1081,23 +1149,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_result.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="138" column="33" selection-start="5204" selection-end="5219" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="2865">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/ecoparque_item_layout.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/ecoparque_item_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="582">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/rest/MaterialesRestDAO.java">
@@ -1137,21 +1205,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/MyPrefs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="54" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_deposito_menu.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="-1.1538461" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/MaterialesDAO.java">
@@ -1165,155 +1226,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="19" selection-start="3441" selection-end="3441" vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="840">
           <folding>
-            <element signature="e#1186#1225#0" expanded="true" />
-            <element signature="e#1260#1279#0" expanded="true" />
-            <element signature="e#1577#1596#0" expanded="true" />
-            <element signature="e#1864#1883#0" expanded="true" />
-            <element signature="e#2160#2179#0" expanded="true" />
-            <element signature="e#2285#2304#0" expanded="true" />
-            <element signature="e#2402#2421#0" expanded="true" />
-            <element signature="e#2729#2748#0" expanded="true" />
-            <element signature="e#3097#3116#0" expanded="true" />
-            <element signature="e#3474#3493#0" expanded="true" />
+            <element signature="e#1186#1225#0" expanded="false" />
+            <element signature="e#1260#1279#0" expanded="false" />
+            <element signature="e#1577#1596#0" expanded="false" />
+            <element signature="e#1864#1883#0" expanded="false" />
+            <element signature="e#2160#2179#0" expanded="false" />
+            <element signature="e#2285#2304#0" expanded="false" />
+            <element signature="e#2402#2421#0" expanded="false" />
+            <element signature="e#2729#2748#0" expanded="false" />
+            <element signature="e#3097#3116#0" expanded="false" />
+            <element signature="e#3474#3493#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_ecoparque_list.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="25" selection-start="639" selection-end="639" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="330">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_depositos_list.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_depositos_list.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="40" selection-start="639" selection-end="654" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="330">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/deposito_item_layout.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/deposito_item_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="21" selection-start="273" selection-end="293" vertical-scroll-proportion="-3.4615386" vertical-offset="0" max-vertical-offset="660">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_usertype.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_usertype.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.1923075" vertical-offset="135" max-vertical-offset="1095">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ArrayAdapterDeposito.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="30" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="930">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Material.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="42" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="600">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#695#696#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/EcoParqueFakeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="2" selection-start="751" selection-end="1306" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/DepositoMaterial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="61" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding>
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="16" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Empresa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="855" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/EcoParqueDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="4" selection-start="383" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoFakeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="72" selection-start="994" selection-end="994" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="810" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/MaterialesFakeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="20" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Deposito.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="11" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="1740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoMaterialDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="34" selection-start="271" selection-end="271" vertical-scroll-proportion="0.37313432" vertical-offset="0" max-vertical-offset="402">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoMaterialFakeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.4477612" vertical-offset="0" max-vertical-offset="525">
-          <folding>
-            <element signature="e#591#600#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/DepositoListItemView.java">
@@ -1337,56 +1315,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="13" selection-start="1716" selection-end="1716" vertical-scroll-proportion="0.18796992" vertical-offset="0" max-vertical-offset="2565">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="24" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.2631579" vertical-offset="0" max-vertical-offset="3960">
-          <folding>
-            <element signature="e#3792#3814#0" expanded="true" />
-            <element signature="e#3824#3852#0" expanded="true" />
-            <element signature="e#3857#3879#0" expanded="true" />
-            <element signature="e#3932#3960#0" expanded="true" />
-            <element signature="e#4007#4035#0" expanded="true" />
-            <element signature="e#4086#4114#0" expanded="true" />
-            <element signature="e#4714#4744#0" expanded="true" />
-            <element signature="e#4823#4853#0" expanded="true" />
-            <element signature="e#5017#5043#0" expanded="true" />
-            <element signature="e#5122#5148#0" expanded="true" />
-            <element signature="e#5312#5335#0" expanded="true" />
-            <element signature="e#5414#5437#0" expanded="true" />
-            <element signature="e#5773#5812#0" expanded="true" />
-            <element signature="e#5867#5904#0" expanded="true" />
-            <element signature="e#6939#6968#0" expanded="true" />
-            <element signature="e#9395#9424#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositoMenuActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="460" selection-end="460" vertical-scroll-proportion="0.08980583" vertical-offset="83" max-vertical-offset="495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositoListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="24" selection-start="1580" selection-end="1580" vertical-scroll-proportion="0.2184466" vertical-offset="90" max-vertical-offset="1140">
-          <folding>
-            <element signature="e#2903#2932#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="13" selection-start="1059" selection-end="1059" vertical-scroll-proportion="-6.819549" vertical-offset="2781" max-vertical-offset="3180">
           <folding />
         </state>
       </provider>
@@ -1405,58 +1336,225 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/EcoparqueListActivity.java">
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/activities/EcoparqueListActivity_.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="1140">
+        <state line="55" column="0" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0" vertical-offset="316" max-vertical-offset="1515">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Material.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/MyPrefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="25" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/daos/fake/DepositoMaterialFakeDAO_.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/EcoParqueFakeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="44" selection-start="565" selection-end="565" vertical-scroll-proportion="-1.7857143" vertical-offset="495" max-vertical-offset="705">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/EcoParque.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="8" selection-start="369" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="600">
+        <state line="7" column="13" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoSQLiteDAO.java">
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/activities/ResultsActivity_.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="4" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1725">
-          <folding>
-            <element signature="e#1864#1874#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoMaterialSQLiteDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="1020">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1334#1343#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/MaterialesSQLiteDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="5" selection-start="1463" selection-end="1745" vertical-scroll-proportion="0.0" vertical-offset="365" max-vertical-offset="765">
+        <state line="65" column="0" selection-start="2522" selection-end="2522" vertical-scroll-proportion="0.121710524" vertical-offset="601" max-vertical-offset="2025">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoparqueSQliteOpenHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/EcoParqueDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="57" selection-start="2781" selection-end="2781" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="945">
+        <state line="14" column="27" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositoListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="10" selection-start="1601" selection-end="1601" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="1140">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoParqueSQLiteDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.3640898" vertical-offset="484" max-vertical-offset="885">
+        <state line="45" column="10" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/EcoparqueListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="8" selection-start="1885" selection-end="2231" vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="1140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Deposito.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="25" selection-start="1793" selection-end="1793" vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="1740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/Empresa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="11" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/CompanyDataActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="42" selection-start="2423" selection-end="2423" vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="3180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="30" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoSQLiteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="56" selection-start="3210" selection-end="3210" vertical-scroll-proportion="0.0" vertical-offset="1162" max-vertical-offset="1995">
           <folding>
-            <element signature="e#1167#1178#0" expanded="true" />
+            <element signature="e#1216#1226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="265" column="0" selection-start="8545" selection-end="8545" vertical-scroll-proportion="0.0" vertical-offset="3397" max-vertical-offset="3990">
+          <folding>
+            <element signature="e#3821#3843#0" expanded="true" />
+            <element signature="e#3853#3881#0" expanded="true" />
+            <element signature="e#3886#3908#0" expanded="true" />
+            <element signature="e#3961#3989#0" expanded="true" />
+            <element signature="e#4036#4064#0" expanded="true" />
+            <element signature="e#4115#4143#0" expanded="true" />
+            <element signature="e#4852#4882#0" expanded="true" />
+            <element signature="e#4961#4991#0" expanded="true" />
+            <element signature="e#5141#5167#0" expanded="true" />
+            <element signature="e#5246#5272#0" expanded="true" />
+            <element signature="e#5421#5444#0" expanded="true" />
+            <element signature="e#5523#5546#0" expanded="true" />
+            <element signature="e#5882#5921#0" expanded="true" />
+            <element signature="e#5976#6013#0" expanded="true" />
+            <element signature="e#7412#7441#0" expanded="true" />
+            <element signature="e#8017#8493#0" expanded="true" />
+            <element signature="e#8482#8483#0" expanded="true" />
+            <element signature="e#9164#9193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/daos/fake/DepositoFakeDAO_.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/EcoparqueSQliteOpenHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="2937" selection-end="2937" vertical-scroll-proportion="0.0" vertical-offset="635" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoFakeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="32" selection-start="1774" selection-end="1774" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/MaterialesSQLiteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="4" selection-start="1493" selection-end="1782" vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoMaterialDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/models/DepositoMaterial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="31" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <folding>
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="69" selection-start="4798" selection-end="4798" vertical-scroll-proportion="0.0" vertical-offset="1875" max-vertical-offset="3300">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4445#4453#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/fake/DepositoMaterialFakeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="64" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="525">
+          <folding>
+            <element signature="e#589#597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/sqlite/DepositoMaterialSQLiteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="32" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.8694362" vertical-offset="382" max-vertical-offset="975">
+          <folding>
+            <element signature="e#1402#1410#0" expanded="true" />
           </folding>
         </state>
       </provider>

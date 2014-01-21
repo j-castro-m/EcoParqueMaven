@@ -90,6 +90,7 @@ public class ResultsActivity extends Activity {
 
 
     Bundle extra;
+    List<String> materiales;
 
     @AfterViews
     void setDataOnView(){
@@ -131,10 +132,14 @@ public class ResultsActivity extends Activity {
 
 
 
+        if(extra.get("materiales")!=null){
+            materiales = (List<String>) extra.get("materiales");
+        }else{
+             materiales = depositoMaterialDAO.getMateriales(deposito);
+        }
 
-        List<Integer> materiales = depositoMaterialDAO.getMateriales(deposito);
 
-        if(materiales.contains(Integer.valueOf(1))){
+        if(materiales.contains("1")){
             if(tipos.length()>0)
             {
                 tipos = tipos+(" ,"+getString(R.string.ITMaterial));
@@ -143,9 +148,10 @@ public class ResultsActivity extends Activity {
             {
                 tipos = tipos+(getString(R.string.ITMaterial));
             }
+
         }
 
-        if(materiales.contains(Integer.valueOf(2))){
+        if(materiales.contains("2")){
             if(tipos.length()>0)
             {
                 tipos = tipos+(", "+getString(R.string.Fridge));
@@ -156,7 +162,7 @@ public class ResultsActivity extends Activity {
             }
         }
 
-        if(materiales.contains(Integer.valueOf(3))){
+        if(materiales.contains("3")){
             if(tipos.length()>0)
             {
                 tipos = tipos+(", "+getString(R.string.Oil));
@@ -188,20 +194,38 @@ public class ResultsActivity extends Activity {
             Context context = getApplicationContext();
             Deposito deposito = (Deposito) extra.get("deposito");
 
-            if(deposito.getId()==0){
-                depositoDAO.addDeposito(deposito);
+            String identifier = deposito.getId();
+
+            deposito.setFecha(date.getText().toString());
+            if(deposito.getId().equals("0")){
+                identifier = depositoDAO.addDeposito(deposito);
             }
             else{
                 depositoDAO.editDeposito(deposito);
             }
 
-         /*   if(extra.get("desposito")==null)
+
+            if(materiales.contains("1"))
             {
-            if(extra.getBoolean("company")){
-                depositoDAO.addDeposito(new Deposito(0,myPrefs.idEcoParque().get(),extra.getString("cif"),date.getText().toString(),String.valueOf(peso),(Empresa)extra.get("empresa")));
+                depositoMaterialDAO.addDepositoMaterial("1",identifier);
             }else{
-                depositoDAO.addDeposito(new Deposito(0,myPrefs.idEcoParque().get(),extra.getString("cif"),date.getText().toString(),String.valueOf(peso)));
-            }*/
+                depositoMaterialDAO.deleteDepositoMaterial("1", identifier);
+            }
+
+            if(materiales.contains("2"))
+            {
+                depositoMaterialDAO.addDepositoMaterial("2",identifier);
+            }else{
+                depositoMaterialDAO.deleteDepositoMaterial("2",identifier);
+            }
+
+            if(materiales.contains("3"))
+            {
+                depositoMaterialDAO.addDepositoMaterial("3",identifier);
+            }else{
+                depositoMaterialDAO.deleteDepositoMaterial("3",identifier);
+            }
+
 
 
                 CharSequence text = getString(R.string.end_toast);
@@ -209,7 +233,7 @@ public class ResultsActivity extends Activity {
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
-                Intent intent = new  Intent(getBaseContext(), LoginActivity_.class);
+                Intent intent = new  Intent(getBaseContext(), DepositoMenuActivity_.class);
                 // Indica que la aplicación debe cerrarse
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -239,32 +263,7 @@ public class ResultsActivity extends Activity {
     }
 
 
-/*
 
-    private DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener(){
-        public void onDateSet(DatePicker view, int year, int month, int day){
-            mYear=year;
-            mMonth=month;
-            mDay=day;
-            updateDisplay();
-        }
-    };
-
-    @Override
-    protected Dialog onCreateDialog(int id)
-    {
-        switch (id){
-            case DATE_DIALOG_ID:
-                return new DatePickerDialog(this, mDateSetListener, mYear,mMonth,mDay);
-        }
-        return null;
-    }
-
-
-    private void updateDisplay(){
-        date.setText(new StringBuilder().append(mDay).append("/").append(mMonth+1).append("/").append(mYear));
-    }
-    */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.result, menu);

@@ -38,20 +38,21 @@ public class MaterialesSQLiteDAO implements MaterialesDAO {
         SQLiteDatabase db = openHelper.getReadableDatabase();
         Cursor query = db.query(openHelper.MATERIALES_TABLE_NAME,null,null,null,null,null,null);
         List<Material> materiales = new ArrayList<Material>();
-
+        query.moveToFirst();
         while (!query.isLast()){
             Material material = buildMaterialFromCursor(query);
             materiales.add(material);
             query.moveToNext();
         }
         query.close();
-        db.close();
+        //db.close();
         return materiales;
     }
 
     public static Material buildMaterialFromCursor(Cursor query) {
+
         Material material = new Material();
-        material.setId((int) query.getInt(query.getColumnIndex("id")));
+        material.setId(query.getString(query.getColumnIndex("id_material")));
         material.setName(query.getString(query.getColumnIndex("name")));
         return material;
     }

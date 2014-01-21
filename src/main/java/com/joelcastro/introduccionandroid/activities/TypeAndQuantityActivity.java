@@ -35,6 +35,8 @@ import com.joelcastro.introduccionandroid.models.Deposito;
 import com.joelcastro.introduccionandroid.models.Empresa;
 import com.joelcastro.introduccionandroid.utils.MyPrefs_;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @EActivity(R.layout.activity_typeandquantity)
@@ -82,17 +84,17 @@ public class TypeAndQuantityActivity extends Activity {
                     empresa = new Empresa(deposito.getDepositanteId(),deposito.getNombre(),deposito.getSector(),deposito.getTelefono(),deposito.getEmail(),deposito.getWeb());
                 }
 
-                List<Integer> materiales = depositoMaterialDAO.getMateriales(deposito);
+                List<String> materiales = depositoMaterialDAO.getMateriales(deposito);
 
-                if(materiales.contains(Integer.valueOf(1))){
-                    checkBoxIT.setChecked(Boolean.TRUE);
+                if(materiales.contains("1")){
+                    checkBoxIT. setChecked(Boolean.TRUE);
                 }
 
-                if(materiales.contains(Integer.valueOf(2))){
+                if(materiales.contains("2")){
                     checkBoxFridge.setChecked(Boolean.TRUE);
                 }
 
-                if(materiales.contains(Integer.valueOf(3))){
+                if(materiales.contains("3")){
                     checkBoxOil.setChecked(Boolean.TRUE);
                 }
 
@@ -117,14 +119,26 @@ public class TypeAndQuantityActivity extends Activity {
        void onClickDeposite(){
            Intent intent = new Intent(this, ResultsActivity_.class);
 
+            List<String> materiales = new ArrayList<String>();
+           if(checkBoxIT.isChecked()){
+               materiales.add("1");
+           }
 
+           if(checkBoxFridge.isChecked()){
+               materiales.add("2");
+           }
 
+           if(checkBoxOil.isChecked()){
+               materiales.add("3");
+           }
+
+            intent.putExtra("materiales", (Serializable) materiales);
            if(extra.get("deposito")==null){
                Log.d("sinDeposito", "sindeposito");
                if(extra.getBoolean("company")){
-                   intent.putExtra("deposito",new Deposito(0,myPrefs.idEcoParque().get(),extra.getString("cif"),fecha,peso.getText().toString(),empresa));
+                   intent.putExtra("deposito",new Deposito("0",myPrefs.idEcoParque().get(),empresa.getCif(),fecha,peso.getText().toString(),empresa));
                }else{
-                   intent.putExtra("deposito", new Deposito(0, myPrefs.idEcoParque().get(), extra.getString("cif"), fecha, peso.getText().toString()));
+                   intent.putExtra("deposito", new Deposito("0", myPrefs.idEcoParque().get(), extra.getString("cif"), fecha, peso.getText().toString()));
                }
 
            }

@@ -24,11 +24,11 @@ public class EcoparqueSQliteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE "+MATERIALES_TABLE_NAME+"(id INT, name TEXT)");
-        db.execSQL("CREATE TABLE "+DEPOSITOSMATERIAL_TABLE_NAME+"(idmateria INT, iddeposito INT)");
-        db.execSQL("CREATE TABLE "+ECOPARQUE_TABLE_NAME+"(id INT, image TEXT, lugar TEXT)");
-        db.execSQL("CREATE TABLE "+DEPOSITOS_TABLE_NAME+"(id INT,"
-                                                        +" idecoparque INT,"
+        db.execSQL("CREATE TABLE "+MATERIALES_TABLE_NAME+"(id_material TEXT, name TEXT)");
+        db.execSQL("CREATE TABLE "+DEPOSITOSMATERIAL_TABLE_NAME+"(id_material TEXT, id_deposito TEXT)");
+        db.execSQL("CREATE TABLE "+ECOPARQUE_TABLE_NAME+"(id_ecoparque TEXT, lugar TEXT, image TEXT)");
+        db.execSQL("CREATE TABLE "+DEPOSITOS_TABLE_NAME+"(id_deposito TEXT,"
+                                                        +" id_ecoparque TEXT,"
                                                         +" depositanteid TEXT,"
                                                         +" fecha TEXT,"
                                                         +" peso TEXT,"
@@ -41,14 +41,14 @@ public class EcoparqueSQliteOpenHelper extends SQLiteOpenHelper {
                                                         +")");
 
 
-        db.execSQL("INSERT INTO "+MATERIALES_TABLE_NAME+" VALUES (1, 'Material informático')");
-        db.execSQL("INSERT INTO "+MATERIALES_TABLE_NAME+" VALUES (2, 'Neveras')");
-        db.execSQL("INSERT INTO "+MATERIALES_TABLE_NAME+" VALUES (3, 'Aceites usados')");
+        db.execSQL("INSERT INTO "+MATERIALES_TABLE_NAME+" VALUES ('1', 'Material informático')");
+        db.execSQL("INSERT INTO "+MATERIALES_TABLE_NAME+" VALUES ('2', 'Neveras')");
+        db.execSQL("INSERT INTO "+MATERIALES_TABLE_NAME+" VALUES ('3', 'Aceites usados')");
 
-        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+" VALUES (1,'San Jose - Las Fuentes','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
-        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+" VALUES (2,'Cogullada','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
-        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+" VALUES (3,'Universidad - Delicias','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
-        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+" VALUES (4,'Valdespartera','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
+        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+" VALUES ('1','San Jose - Las Fuentes','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
+        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+" VALUES ('2','Cogullada','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
+        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+" VALUES ('3','Universidad - Delicias','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
+        db.execSQL("INSERT INTO "+ECOPARQUE_TABLE_NAME+" VALUES ('4','Valdespartera','http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png')");
 
 
     }

@@ -7,8 +7,8 @@ import java.io.Serializable;
  */
 public class Deposito implements Serializable {
 
-    private int id;
-    private int idEcoParque;
+    private String id_deposito;
+    private String idEcoParque;
     private String depositanteId;
     private String fecha;
     private String peso;
@@ -22,8 +22,8 @@ public class Deposito implements Serializable {
     public Deposito() {
     }
 
-    public Deposito(int id,int idEcoParque, String depositanteId, String fecha, String peso, Boolean company, String nombre, String sector, String telefono, String email, String web) {
-        this.id = id;
+    public Deposito(String id_deposito,String idEcoParque, String depositanteId, String fecha, String peso, Boolean company, String nombre, String sector, String telefono, String email, String web) {
+        this.id_deposito = id_deposito;
         this.depositanteId = depositanteId;
         this.fecha = fecha;
         this.peso = peso;
@@ -36,8 +36,8 @@ public class Deposito implements Serializable {
         this.idEcoParque=idEcoParque;
     }
 
-    public Deposito(int id,int idEcoParque, String depositanteId, String fecha, String peso) {
-        this.id = id;
+    public Deposito(String id_deposito,String idEcoParque, String depositanteId, String fecha, String peso) {
+        this.id_deposito = id_deposito;
         this.depositanteId = depositanteId;
         this.fecha = fecha;
         this.peso = peso;
@@ -50,9 +50,9 @@ public class Deposito implements Serializable {
         this.web="";
     }
 
-    public Deposito(int id,int idEcoParque, String depositanteId, String fecha, String peso, Empresa empresa) {
-        this.id = id;
-        this.depositanteId = depositanteId;
+    public Deposito(String id_deposito,String idEcoParque, String depositanteId, String fecha, String peso, Empresa empresa) {
+        this.id_deposito = id_deposito;
+        this.depositanteId = empresa.getCif();
         this.fecha = fecha;
         this.peso = peso;
         this.company = Boolean.TRUE;
@@ -64,12 +64,12 @@ public class Deposito implements Serializable {
         this.idEcoParque=idEcoParque;
     }
 
-    public int getId() {
-        return id;
+    public String getId() {
+        return id_deposito;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(String id_deposito) {
+        this.id_deposito = id_deposito;
     }
 
     public String getDepositanteId() {
@@ -144,11 +144,11 @@ public class Deposito implements Serializable {
         this.web = web;
     }
 
-    public int getIdEcoParque() {
+    public String getIdEcoParque() {
         return idEcoParque;
     }
 
-    public void setIdEcoParque(int idEcoParque) {
+    public void setIdEcoParque(String idEcoParque) {
         this.idEcoParque = idEcoParque;
     }
 }
