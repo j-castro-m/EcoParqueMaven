@@ -37,6 +37,15 @@
         <activity android:label="@string/app_title" android:name=".activities.InfoDomActivity_" android:parentActivityName="com.joelcastro.introduccionandroid.activities.CompanyDataActivity_">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.joelcastro.introduccionandroid.activities.CompanyDataActivity_"/>
         </activity>
+        <activity android:label="@string/app_title" android:name=".activities.DepositoMenuActivity_" android:parentActivityName="com.joelcastro.introduccionandroid.activities.EcoparqueListActivity_">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.joelcastro.introduccionandroid.activities.EcoparqueListActivity_"/>
+        </activity>
+        <activity android:label="@string/app_title" android:name=".activities.DepositoListActivity_" android:parentActivityName="com.joelcastro.introduccionandroid.activities.DepositoMenuActivity_">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.joelcastro.introduccionandroid.activities.DepositoMenuActivity_"/>
+        </activity>
+
+
+
     </application>
 
 </manifest>

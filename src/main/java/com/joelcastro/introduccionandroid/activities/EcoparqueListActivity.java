@@ -30,8 +30,8 @@ public class EcoparqueListActivity extends Activity {
     @Pref MyPrefs_ myPrefs;
 
     DAOFactory daoFactory = new DAOFactory();
-    @Bean
-    EcoParqueFakeDAO ecoParqueDAO = (EcoParqueFakeDAO) daoFactory.getEcoParqueDAO();
+    @Bean(EcoParqueFakeDAO.class)
+    EcoParqueDAO ecoParqueDAO = daoFactory.getEcoParqueDAO();
 
     ArrayAdapterEcoParque adapter;
 
@@ -45,7 +45,7 @@ public class EcoparqueListActivity extends Activity {
     @ItemClick(R.id.listView)
     void onListItemClick(int position)
     {
-        Intent intent = new Intent().setClass(this, UserTypeActivity_.class);
+        Intent intent = new Intent().setClass(this, DepositoMenuActivity_.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         myPrefs.idEcoParque().put(ecoParqueDAO.getAllEcoParques().get(position).getId());
         myPrefs.lugarEcoParque().put(ecoParqueDAO.getAllEcoParques().get(position).getLugar());

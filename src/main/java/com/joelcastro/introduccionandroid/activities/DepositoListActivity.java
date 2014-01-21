@@ -26,16 +26,16 @@ import com.joelcastro.introduccionandroid.utils.MyPrefs_;
 
 import java.util.List;
 
-@EActivity(R.layout.activity_ecoparque_list)
+@EActivity(R.layout.activity_depositos_list)
 public class DepositoListActivity extends Activity {
 
-    @ViewById(R.id.listView) ListView listViewItems;
+    @ViewById(R.id.listDepositView) ListView listViewItems;
     @Pref
     MyPrefs_ myPrefs;
 
     DAOFactory daoFactory = new DAOFactory();
-    @Bean
-    DepositoFakeDAO depositoDAO = (DepositoFakeDAO) daoFactory.getDepositosDAO();
+    @Bean(DepositoFakeDAO.class)
+    DepositoDAO depositoDAO = daoFactory.getDepositosDAO();
 
     ArrayAdapterDeposito adapter;
 
@@ -46,12 +46,18 @@ public class DepositoListActivity extends Activity {
         listViewItems.setAdapter(adapter);
     }
 
-    @ItemClick(R.id.listView)
-    void onListItemClick(int position)
+    @ItemClick(R.id.listDepositView)
+    void onDepositoClick(int position)
     {
-        Intent intent = new Intent().setClass(this, UserTypeActivity_.class);
+        Intent intent = new Intent().setClass(this, ResultsActivity_.class);
+        intent.putExtra("ITmat", depositoDAO.getAllDeposites().get(position).getIt());
+        intent.putExtra("Fridge", depositoDAO.getAllDeposites().get(position).getFridges());
+        intent.putExtra("Oil", depositoDAO.getAllDeposites().get(position).getOil());
+        intent.putExtra("Peso",depositoDAO.getAllDeposites().get(position).getPeso());
+        intent.putExtra("cif",depositoDAO.getAllDeposites().get(position).getDepositanteId());
+        intent.putExtra("email","test@gmail.com");
         //objectItemData[position].getId()
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 

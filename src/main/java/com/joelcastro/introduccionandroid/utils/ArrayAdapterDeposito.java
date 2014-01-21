@@ -38,26 +38,17 @@ public class ArrayAdapterDeposito extends ArrayAdapter<Deposito> {
 
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        DepositoListItemView itemView;
 
         if(convertView==null){
-            LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
-            convertView = inflater.inflate(layoutResourceId, parent, false);
+            itemView = DepositoListItemView_.build(mContext);
+            //LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
+            //convertView = inflater.inflate(layoutResourceId, parent, false);
+        }else{
+            itemView = (DepositoListItemView) convertView;
         }
-
-
-        Deposito objectItem = data.get(position);
-
-
-        TextView idAndWeigth = (TextView) convertView.findViewById(R.id.depositoListItemIdAndWeight);
-        idAndWeigth.setText(objectItem.getDepositanteId() + " (" +objectItem.getPeso() + "Kg)");
-        idAndWeigth.setTag(objectItem.getId());
-
-        TextView fecha = (TextView) convertView.findViewById(R.id.depositoListItemFecha);
-        fecha.setText(objectItem.getFecha());
-
-
-
-        return convertView;
+        itemView.fillData(data.get(position));
+        return itemView;
 
     }
 

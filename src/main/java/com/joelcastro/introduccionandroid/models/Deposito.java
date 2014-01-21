@@ -12,8 +12,9 @@ public class Deposito implements Serializable {
     private String fecha;
     private String peso;
     private Boolean it,oil,fridges;
+    private Boolean company;
 
-    public Deposito(int id, String depositanteId, String fecha, String peso, Boolean it, Boolean oil, Boolean fridges) {
+    public Deposito(int id, String depositanteId, String fecha, String peso, Boolean it, Boolean oil, Boolean fridges,Boolean company) {
         this.id = id;
         this.depositanteId = depositanteId;
         this.fecha = fecha;
@@ -21,6 +22,7 @@ public class Deposito implements Serializable {
         this.it = it;
         this.oil = oil;
         this.fridges = fridges;
+        this.company = company;
     }
 
     public int getId() {
@@ -77,5 +79,13 @@ public class Deposito implements Serializable {
 
     public void setFridges(Boolean fridges) {
         this.fridges = fridges;
+    }
+
+    public Boolean getCompany() {
+        return company;
+    }
+
+    public void setCompany(Boolean company) {
+        this.company = company;
     }
 }
