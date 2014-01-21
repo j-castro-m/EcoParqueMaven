@@ -16,4 +16,7 @@ public interface DepositoDAO {
 
 
     public List<Deposito> getAllDeposites();
+    public List<Deposito> getDepositesFromEcoParque(int idEcoParque);
+    public void addDeposito(Deposito deposito);
+    public void editDeposito(Deposito deposito);
 }

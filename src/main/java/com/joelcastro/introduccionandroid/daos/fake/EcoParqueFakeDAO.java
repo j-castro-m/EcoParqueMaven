@@ -29,4 +29,20 @@ public class EcoParqueFakeDAO implements EcoParqueDAO {
         objectItemData.add(new EcoParque(3, "Valdespartera","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png"));
         return objectItemData;
     }
+
+    @Override
+    public EcoParque getEcoParque(int idEcoParque) {
+        switch(idEcoParque){
+            case 1:
+                return new EcoParque(1, "San Jose - Las Fuentes","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+            case 2:
+                return new EcoParque(2, "Cogullada","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+            case 3:
+                return new EcoParque(3, "Valdespartera","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+            case 4:
+                return new EcoParque(4, "Universidad - Delicias","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+            default:
+                return new EcoParque(4, "Universidad - Delicias","http://www.restauranteateneo.es/sites/all/themes/ateneo/images/bus.png");
+        }
+    }
 }

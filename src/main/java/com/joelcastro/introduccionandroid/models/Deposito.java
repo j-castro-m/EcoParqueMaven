@@ -8,13 +8,19 @@ import java.io.Serializable;
 public class Deposito implements Serializable {
 
     private int id;
+    private int idEcoParque;
     private String depositanteId;
     private String fecha;
     private String peso;
     private Boolean it,oil,fridges;
     private Boolean company;
+    private String nombre;
+    private String sector;
+    private String telefono;
+    private String email;
+    private String web;
 
-    public Deposito(int id, String depositanteId, String fecha, String peso, Boolean it, Boolean oil, Boolean fridges,Boolean company) {
+    public Deposito(int id,int idEcoParque, String depositanteId, String fecha, String peso, Boolean it, Boolean oil, Boolean fridges, Boolean company, String nombre, String sector, String telefono, String email, String web) {
         this.id = id;
         this.depositanteId = depositanteId;
         this.fecha = fecha;
@@ -23,6 +29,12 @@ public class Deposito implements Serializable {
         this.oil = oil;
         this.fridges = fridges;
         this.company = company;
+        this.nombre = nombre;
+        this.sector = sector;
+        this.telefono = telefono;
+        this.email = email;
+        this.web = web;
+        this.idEcoParque=idEcoParque;
     }
 
     public int getId() {
@@ -87,5 +99,53 @@ public class Deposito implements Serializable {
 
     public void setCompany(Boolean company) {
         this.company = company;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getSector() {
+        return sector;
+    }
+
+    public void setSector(String sector) {
+        this.sector = sector;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getWeb() {
+        return web;
+    }
+
+    public void setWeb(String web) {
+        this.web = web;
+    }
+
+    public int getIdEcoParque() {
+        return idEcoParque;
+    }
+
+    public void setIdEcoParque(int idEcoParque) {
+        this.idEcoParque = idEcoParque;
     }
 }

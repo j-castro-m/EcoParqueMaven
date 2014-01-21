@@ -13,4 +13,6 @@ import java.util.List;
 public interface EcoParqueDAO {
 
     public List<EcoParque> getAllEcoParques();
+    public EcoParque getEcoParque(int idEcoParque);
+
 }
