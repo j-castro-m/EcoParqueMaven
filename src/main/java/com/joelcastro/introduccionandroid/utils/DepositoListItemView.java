@@ -61,21 +61,14 @@ public class DepositoListItemView extends RelativeLayout {
     public void onEditClick()
     {
         Intent intent=new Intent(context, TypeAndQuantityActivity_.class);
-        intent.putExtra("cif",deposito.getDepositanteId());
-        intent.putExtra("company",deposito.getCompany());
+        intent.putExtra("deposito",deposito);
         context.startActivity(intent);
     }
 
     @Click(R.id.depositoListItemFull)
     public void onAllClick(){
         Intent intent = new Intent().setClass(context, ResultsActivity_.class);
-        for(Material material : depositoMaterialDAO.getMateriales(deposito))
-        {
-            intent.putExtra(material.getName(),Boolean.TRUE);
-        }
-        intent.putExtra("Peso", deposito.getPeso());
-        intent.putExtra("cif", deposito.getDepositanteId());
-        intent.putExtra("email","test@gmail.com");
+        intent.putExtra("deposito",deposito);
 
         context.startActivity(intent);
     }

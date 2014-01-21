@@ -49,7 +49,7 @@ public class MaterialesSQLiteDAO implements MaterialesDAO {
         return materiales;
     }
 
-    private Material buildMaterialFromCursor(Cursor query) {
+    public static Material buildMaterialFromCursor(Cursor query) {
         Material material = new Material();
         material.setId((int) query.getInt(query.getColumnIndex("id")));
         material.setName(query.getString(query.getColumnIndex("name")));

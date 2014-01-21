@@ -29,18 +29,25 @@ import com.googlecode.androidannotations.annotations.sharedpreferences.Pref;
 import com.joelcastro.introduccionandroid.R;
 import com.joelcastro.introduccionandroid.daos.DAOFactory;
 import com.joelcastro.introduccionandroid.daos.DepositoDAO;
+import com.joelcastro.introduccionandroid.daos.DepositoMaterialDAO;
 import com.joelcastro.introduccionandroid.daos.fake.DepositoFakeDAO;
+import com.joelcastro.introduccionandroid.daos.sqlite.DepositoMaterialSQLiteDAO;
+import com.joelcastro.introduccionandroid.daos.sqlite.DepositoSQLiteDAO;
 import com.joelcastro.introduccionandroid.models.Deposito;
 import com.joelcastro.introduccionandroid.models.Empresa;
 import com.joelcastro.introduccionandroid.utils.MyPrefs_;
 
 import java.util.Calendar;
+import java.util.List;
 
 @EActivity(R.layout.activity_result)
 public class ResultsActivity extends Activity {
     DAOFactory daoFactory = new DAOFactory();
-    @Bean(DepositoFakeDAO.class)
+    @Bean(DepositoSQLiteDAO.class)
     DepositoDAO depositoDAO = daoFactory.getDepositosDAO();
+
+    @Bean(DepositoMaterialSQLiteDAO.class)
+    DepositoMaterialDAO depositoMaterialDAO = daoFactory.getDepositoMaterialDAO();
 
     private int mYear;
     private int mMonth;
@@ -51,10 +58,13 @@ public class ResultsActivity extends Activity {
     String tipos = "";
     String email= new String("");;
 
-    double peso;
-    double precio;
-    double iva;
-    double total;
+
+    float PRECIO_KILO = 2.5f;
+    float PORCENTAJE_IVA = 0.2f;
+    int peso;
+    float precio;
+    float iva;
+    float total;
 
     @Pref MyPrefs_ myPrefs;
 
@@ -86,11 +96,15 @@ public class ResultsActivity extends Activity {
         extra = this.getIntent().getExtras();
         Deposito deposito = (Deposito) extra.get("deposito");
 
-        peso = Double.parseDouble(deposito.getPeso());
+        peso = Integer.parseInt(deposito.getPeso());
         cif.setText(deposito.getDepositanteId());
+        if(!deposito.getFecha().equals("")){
+            date.setText(deposito.getFecha());
+        }
 
-        precio = peso * 2.5;
-        iva = precio * 0.2;
+
+        precio = peso * PRECIO_KILO;
+        iva = precio * PORCENTAJE_IVA;
         double total = precio + iva;
 
         textPlace.setText(myPrefs.lugarEcoParque().get());
@@ -118,8 +132,9 @@ public class ResultsActivity extends Activity {
 
 
 
-        if(extra.getBoolean("ITmat"))
-        {
+        List<Integer> materiales = depositoMaterialDAO.getMateriales(deposito);
+
+        if(materiales.contains(Integer.valueOf(1))){
             if(tipos.length()>0)
             {
                 tipos = tipos+(" ,"+getString(R.string.ITMaterial));
@@ -130,8 +145,7 @@ public class ResultsActivity extends Activity {
             }
         }
 
-        if(extra.getBoolean("Fridge"))
-        {
+        if(materiales.contains(Integer.valueOf(2))){
             if(tipos.length()>0)
             {
                 tipos = tipos+(", "+getString(R.string.Fridge));
@@ -142,8 +156,7 @@ public class ResultsActivity extends Activity {
             }
         }
 
-        if(extra.getBoolean("Oil"))
-        {
+        if(materiales.contains(Integer.valueOf(3))){
             if(tipos.length()>0)
             {
                 tipos = tipos+(", "+getString(R.string.Oil));
@@ -153,6 +166,8 @@ public class ResultsActivity extends Activity {
                 tipos = tipos+(getString(R.string.Oil));
             }
         }
+
+
 
         tipo_residuo.setText(tipos);
     }

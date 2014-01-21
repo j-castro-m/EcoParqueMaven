@@ -60,7 +60,7 @@ public class CompanyDataActivity extends Activity {
         intent.putExtra("email",email.getText().toString());
         intent.putExtra("nombreParada",extra.getString("nombreParada"));
 
-        intent.putExtra("empresa", new Empresa(cif.getText().toString(),name.getText().toString(),spinner.getPrompt().toString(),phone.getText().toString(),email.getText().toString(),web.getText().toString()));
+        intent.putExtra("empresa", new Empresa(cif.getText().toString(),name.getText().toString(),spinner.getSelectedItem().toString(),phone.getText().toString(),email.getText().toString(),web.getText().toString()));
         startActivity(intent);
     }
 

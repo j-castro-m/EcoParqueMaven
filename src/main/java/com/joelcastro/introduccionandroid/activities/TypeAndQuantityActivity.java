@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,15 +18,24 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.googlecode.androidannotations.annotations.AfterViews;
+import com.googlecode.androidannotations.annotations.Bean;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.TextChange;
 import com.googlecode.androidannotations.annotations.ViewById;
 import com.googlecode.androidannotations.annotations.sharedpreferences.Pref;
 import com.joelcastro.introduccionandroid.R;
+import com.joelcastro.introduccionandroid.daos.DAOFactory;
+import com.joelcastro.introduccionandroid.daos.DepositoMaterialDAO;
+import com.joelcastro.introduccionandroid.daos.EcoParqueDAO;
+import com.joelcastro.introduccionandroid.daos.fake.EcoParqueFakeDAO;
+import com.joelcastro.introduccionandroid.daos.sqlite.DepositoMaterialSQLiteDAO;
+import com.joelcastro.introduccionandroid.daos.sqlite.EcoParqueSQLiteDAO;
 import com.joelcastro.introduccionandroid.models.Deposito;
 import com.joelcastro.introduccionandroid.models.Empresa;
 import com.joelcastro.introduccionandroid.utils.MyPrefs_;
+
+import java.util.List;
 
 @EActivity(R.layout.activity_typeandquantity)
 public class TypeAndQuantityActivity extends Activity {
@@ -40,6 +50,10 @@ public class TypeAndQuantityActivity extends Activity {
      @ViewById(R.id.checkBoxIT) CheckBox checkBoxIT;
      @ViewById(R.id.checkBoxFridge) CheckBox checkBoxFridge;
      @ViewById(R.id.checkBoxOil) CheckBox checkBoxOil;
+
+    DAOFactory daoFactory = new DAOFactory();
+    @Bean(DepositoMaterialSQLiteDAO.class)
+    DepositoMaterialDAO depositoMaterialDAO = daoFactory.getDepositoMaterialDAO();
 
      Bundle extra;
         String fecha;
@@ -67,6 +81,22 @@ public class TypeAndQuantityActivity extends Activity {
                 if(company){
                     empresa = new Empresa(deposito.getDepositanteId(),deposito.getNombre(),deposito.getSector(),deposito.getTelefono(),deposito.getEmail(),deposito.getWeb());
                 }
+
+                List<Integer> materiales = depositoMaterialDAO.getMateriales(deposito);
+
+                if(materiales.contains(Integer.valueOf(1))){
+                    checkBoxIT.setChecked(Boolean.TRUE);
+                }
+
+                if(materiales.contains(Integer.valueOf(2))){
+                    checkBoxFridge.setChecked(Boolean.TRUE);
+                }
+
+                if(materiales.contains(Integer.valueOf(3))){
+                    checkBoxOil.setChecked(Boolean.TRUE);
+                }
+
+
             }
 
         }
@@ -85,28 +115,26 @@ public class TypeAndQuantityActivity extends Activity {
 
        @Click(value=R.id.button_deposite)
        void onClickDeposite(){
-           Intent intent = new Intent(getBaseContext(), ResultsActivity_.class);
+           Intent intent = new Intent(this, ResultsActivity_.class);
 
-           if(extra.getBoolean("company")){
-               intent.putExtra("empresa",(Empresa)extra.get("empresa"));
-           }
 
-           intent.putExtra("email",extra.getString("email"));
 
            if(extra.get("deposito")==null){
-           if(extra.getBoolean("company")){
-               intent.putExtra("desposito",new Deposito(0,myPrefs.idEcoParque().get(),extra.getString("cif"),fecha,String.valueOf(peso),empresa));
-           }else{
-               intent.putExtra("desposito", new Deposito(0, myPrefs.idEcoParque().get(), extra.getString("cif"), fecha, String.valueOf(peso)));
-           }
+               Log.d("sinDeposito", "sindeposito");
+               if(extra.getBoolean("company")){
+                   intent.putExtra("deposito",new Deposito(0,myPrefs.idEcoParque().get(),extra.getString("cif"),fecha,peso.getText().toString(),empresa));
+               }else{
+                   intent.putExtra("deposito", new Deposito(0, myPrefs.idEcoParque().get(), extra.getString("cif"), fecha, peso.getText().toString()));
+               }
+
            }
            else
            {
                Deposito deposito = (Deposito)extra.get("deposito");
                if(extra.getBoolean("company")){
-                   intent.putExtra("desposito",new Deposito(deposito.getId(),deposito.getIdEcoParque(),deposito.getDepositanteId(),fecha,String.valueOf(peso),empresa));
+                   intent.putExtra("deposito",new Deposito(deposito.getId(),deposito.getIdEcoParque(),deposito.getDepositanteId(),fecha,peso.getText().toString(),empresa));
                }else{
-                   intent.putExtra("desposito", new Deposito(deposito.getId(),deposito.getIdEcoParque(), deposito.getDepositanteId(), fecha, String.valueOf(peso)));
+                   intent.putExtra("deposito", new Deposito(deposito.getId(),deposito.getIdEcoParque(), deposito.getDepositanteId(), fecha,peso.getText().toString()));
                }
            }
            startActivity(intent);

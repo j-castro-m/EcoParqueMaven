@@ -18,6 +18,7 @@ import com.joelcastro.introduccionandroid.daos.DAOFactory;
 import com.joelcastro.introduccionandroid.daos.DepositoDAO;
 import com.joelcastro.introduccionandroid.daos.EcoParqueDAO;
 import com.joelcastro.introduccionandroid.daos.fake.EcoParqueFakeDAO;
+import com.joelcastro.introduccionandroid.daos.sqlite.EcoParqueSQLiteDAO;
 import com.joelcastro.introduccionandroid.utils.ArrayAdapterEcoParque;
 import com.joelcastro.introduccionandroid.models.EcoParque;
 import com.joelcastro.introduccionandroid.utils.MyPrefs_;
@@ -30,7 +31,7 @@ public class EcoparqueListActivity extends Activity {
     @Pref MyPrefs_ myPrefs;
 
     DAOFactory daoFactory = new DAOFactory();
-    @Bean(EcoParqueFakeDAO.class)
+    @Bean(EcoParqueSQLiteDAO.class)
     EcoParqueDAO ecoParqueDAO = daoFactory.getEcoParqueDAO();
 
     ArrayAdapterEcoParque adapter;

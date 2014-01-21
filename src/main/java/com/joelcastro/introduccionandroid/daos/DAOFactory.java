@@ -36,6 +36,15 @@ public class DAOFactory {
     MaterialesSQLiteDAO materialesSQLiteDAO;
 
 
+    @Bean
+    EcoParqueFakeDAO ecoParqueSQLiteDAO;
+
+    @Bean
+    DepositoFakeDAO depositoSQLiteDAO;
+
+    @Bean
+    DepositoMaterialFakeDAO depositoMaterialSQLiteDAO;
+
     MaterialesDAO materialesDAOSelected;
     EcoParqueDAO ecoParqueDAOSelected;
     DepositoDAO depositoDAOSelected;
@@ -50,6 +59,9 @@ public class DAOFactory {
             depositoMaterialDAOSelected = depositoMaterialFakeDAO;
         } else {
             materialesDAOSelected = materialesSQLiteDAO;
+            ecoParqueDAOSelected = ecoParqueSQLiteDAO;
+            depositoDAOSelected = depositoSQLiteDAO;
+            depositoMaterialDAOSelected = depositoMaterialSQLiteDAO;
         }
     }
 

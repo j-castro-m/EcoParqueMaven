@@ -18,6 +18,7 @@ import com.joelcastro.introduccionandroid.R;
 import com.joelcastro.introduccionandroid.daos.DAOFactory;
 import com.joelcastro.introduccionandroid.daos.DepositoDAO;
 import com.joelcastro.introduccionandroid.daos.fake.DepositoFakeDAO;
+import com.joelcastro.introduccionandroid.daos.sqlite.DepositoSQLiteDAO;
 import com.joelcastro.introduccionandroid.models.Deposito;
 import com.joelcastro.introduccionandroid.models.EcoParque;
 import com.joelcastro.introduccionandroid.utils.ArrayAdapterDeposito;
@@ -34,7 +35,7 @@ public class DepositoListActivity extends Activity {
     MyPrefs_ myPrefs;
 
     DAOFactory daoFactory = new DAOFactory();
-    @Bean(DepositoFakeDAO.class)
+    @Bean(DepositoSQLiteDAO.class)
     DepositoDAO depositoDAO = daoFactory.getDepositosDAO();
 
     ArrayAdapterDeposito adapter;

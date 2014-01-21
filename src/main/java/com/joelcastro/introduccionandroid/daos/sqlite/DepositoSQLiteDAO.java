@@ -49,8 +49,19 @@ public class DepositoSQLiteDAO implements DepositoDAO {
 
     @Override
     public List<Deposito> getDepositesFromEcoParque(int idEcoParque) {
-        return null;
-    }
+        SQLiteDatabase db = openHelper.getReadableDatabase();
+        Cursor query = db.rawQuery("SELECT * FROM " + EcoparqueSQliteOpenHelper.DEPOSITOS_TABLE_NAME + "WHERE idecoparque=" + idEcoParque, null);
+        List<Deposito> depositos = new ArrayList<Deposito>();
+        query.moveToFirst();
+        for(int i=0;i<query.getCount();i++){
+            Deposito deposito = buildDepositoFromCursor(query);
+            depositos.add(deposito);
+            query.moveToNext();
+        }
+        query.close();
+        db.close();
+        return depositos; }
+    
 
     @Override
     public void addDeposito(Deposito deposito) {
