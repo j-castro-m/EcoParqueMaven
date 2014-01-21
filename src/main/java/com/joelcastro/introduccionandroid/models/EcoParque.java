@@ -11,6 +11,9 @@ public class EcoParque implements Serializable{
     private String lugar;
     private String image;
 
+    public EcoParque() {
+
+    }
     public EcoParque(int id, String lugar, String image) {
         this.id = id;
         this.image = image;
