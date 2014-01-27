@@ -37,18 +37,18 @@ public final class DAOFactory_
         if (!(context_ instanceof Activity)) {
             return ;
         }
-        ((DepositoParseDAO_) depositoParseDAO).afterSetContentView_();
-        ((DepositoFakeDAO_) depositoFakeDAO).afterSetContentView_();
-        ((EcoParqueParseDAO_) ecoParqueParseDAO).afterSetContentView_();
-        ((MaterialesSQLiteDAO_) materialesSQLiteDAO).afterSetContentView_();
-        ((MaterialesParseDAO_) materialesParseDAO).afterSetContentView_();
         ((DepositoMaterialParseDAO_) depositoMaterialParseDAO).afterSetContentView_();
         ((EcoParqueSQLiteDAO_) ecoParqueSQLiteDAO).afterSetContentView_();
         ((DepositoMaterialSQLiteDAO_) depositoMaterialSQLiteDAO).afterSetContentView_();
         ((MaterialesFakeDAO_) materialesFakeDAO).afterSetContentView_();
         ((EcoParqueFakeDAO_) ecoParqueFakeDAO).afterSetContentView_();
-        ((DepositoMaterialFakeDAO_) depositoMaterialFakeDAO).afterSetContentView_();
+        ((MaterialesSQLiteDAO_) materialesSQLiteDAO).afterSetContentView_();
+        ((EcoParqueParseDAO_) ecoParqueParseDAO).afterSetContentView_();
+        ((DepositoFakeDAO_) depositoFakeDAO).afterSetContentView_();
         ((DepositoSQLiteDAO_) depositoSQLiteDAO).afterSetContentView_();
+        ((MaterialesParseDAO_) materialesParseDAO).afterSetContentView_();
+        ((DepositoMaterialFakeDAO_) depositoMaterialFakeDAO).afterSetContentView_();
+        ((DepositoParseDAO_) depositoParseDAO).afterSetContentView_();
     }
 
     /**
@@ -65,18 +65,18 @@ public final class DAOFactory_
         if (context_ instanceof Activity) {
             Activity activity = ((Activity) context_);
         }
-        depositoParseDAO = DepositoParseDAO_.getInstance_(context_);
-        depositoFakeDAO = DepositoFakeDAO_.getInstance_(context_);
-        ecoParqueParseDAO = EcoParqueParseDAO_.getInstance_(context_);
-        materialesSQLiteDAO = MaterialesSQLiteDAO_.getInstance_(context_);
-        materialesParseDAO = MaterialesParseDAO_.getInstance_(context_);
         depositoMaterialParseDAO = DepositoMaterialParseDAO_.getInstance_(context_);
         ecoParqueSQLiteDAO = EcoParqueSQLiteDAO_.getInstance_(context_);
         depositoMaterialSQLiteDAO = DepositoMaterialSQLiteDAO_.getInstance_(context_);
         materialesFakeDAO = MaterialesFakeDAO_.getInstance_(context_);
         ecoParqueFakeDAO = EcoParqueFakeDAO_.getInstance_(context_);
-        depositoMaterialFakeDAO = DepositoMaterialFakeDAO_.getInstance_(context_);
+        materialesSQLiteDAO = MaterialesSQLiteDAO_.getInstance_(context_);
+        ecoParqueParseDAO = EcoParqueParseDAO_.getInstance_(context_);
+        depositoFakeDAO = DepositoFakeDAO_.getInstance_(context_);
         depositoSQLiteDAO = DepositoSQLiteDAO_.getInstance_(context_);
+        materialesParseDAO = MaterialesParseDAO_.getInstance_(context_);
+        depositoMaterialFakeDAO = DepositoMaterialFakeDAO_.getInstance_(context_);
+        depositoParseDAO = DepositoParseDAO_.getInstance_(context_);
         initDAOs();
     }
 

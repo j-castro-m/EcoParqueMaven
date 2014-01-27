@@ -25,9 +25,7 @@ public class DepositoMaterialParseDAO implements DepositoMaterialDAO {
         query.whereMatches("idDeposito",deposito.getId());
         try {
             for (ParseObject parseObject : query.find()) {
-                Material material = new Material();
-                material.setId(parseObject.getString("idMaterial"));
-                materials.add(material.getId());
+                materials.add(parseObject.getString("idMaterial"));
             }
 
         } catch (ParseException e) {
@@ -41,6 +39,7 @@ public class DepositoMaterialParseDAO implements DepositoMaterialDAO {
         ParseObject depositoMaterial = new ParseObject("MaterialsAndDeposite");
         depositoMaterial.put("idMaterial",idMaterial);
         depositoMaterial.put("idDeposito",idDeposito);
+        depositoMaterial.saveInBackground();
     }
 
     @Override

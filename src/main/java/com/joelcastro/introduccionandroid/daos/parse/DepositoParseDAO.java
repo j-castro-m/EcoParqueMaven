@@ -80,11 +80,12 @@ public class DepositoParseDAO implements DepositoDAO {
     @Override
     public String addDeposito(Deposito deposito) {
         ParseQuery<ParseObject > query = ParseQuery.getQuery("Deposites");
-
+        String identifier = "0";
         ParseObject depositoParse = new ParseObject("Deposites");
 
         try {
             depositoParse.put("idDeposito", String.valueOf(query.count() + 1));
+            identifier = String.valueOf(query.count() + 1);
 
         }catch (ParseException ex){
 
@@ -101,7 +102,7 @@ public class DepositoParseDAO implements DepositoDAO {
         depositoParse.put("email",deposito.getEmail());
         depositoParse.put("web", deposito.getWeb());
         depositoParse.saveInBackground();
-        return deposito.getId();
+        return identifier;
     }
 
     @Override
