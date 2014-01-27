@@ -20,6 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.googlecode.androidannotations.annotations.AfterInject;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Bean;
 import com.googlecode.androidannotations.annotations.Click;
@@ -37,17 +38,24 @@ import com.joelcastro.introduccionandroid.models.Deposito;
 import com.joelcastro.introduccionandroid.models.Empresa;
 import com.joelcastro.introduccionandroid.utils.MyPrefs_;
 
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @EActivity(R.layout.activity_result)
 public class ResultsActivity extends Activity {
-    DAOFactory daoFactory = new DAOFactory();
-    @Bean(DepositoSQLiteDAO.class)
-    DepositoDAO depositoDAO = daoFactory.getDepositosDAO();
 
-    @Bean(DepositoMaterialSQLiteDAO.class)
-    DepositoMaterialDAO depositoMaterialDAO = daoFactory.getDepositoMaterialDAO();
+    @Bean
+    DAOFactory daoFactory;
+    DepositoDAO depositoDAO;
+    DepositoMaterialDAO depositoMaterialDAO;
+
+
+
 
     private int mYear;
     private int mMonth;
@@ -92,15 +100,25 @@ public class ResultsActivity extends Activity {
     Bundle extra;
     List<String> materiales;
 
+    @AfterInject
+    void initDAO(){
+        depositoDAO = daoFactory.getDepositosDAO();
+        depositoMaterialDAO = daoFactory.getDepositoMaterialDAO();
+    }
+
     @AfterViews
     void setDataOnView(){
         extra = this.getIntent().getExtras();
         Deposito deposito = (Deposito) extra.get("deposito");
 
+        deposito.setIdEcoParque(myPrefs.idEcoParque().get());
         peso = Integer.parseInt(deposito.getPeso());
         cif.setText(deposito.getDepositanteId());
         if(!deposito.getFecha().equals("")){
             date.setText(deposito.getFecha());
+        }else{
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            date.setText(format.format(new Date()));
         }
 
 

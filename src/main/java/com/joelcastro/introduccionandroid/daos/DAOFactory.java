@@ -9,7 +9,13 @@ import com.joelcastro.introduccionandroid.daos.fake.DepositoFakeDAO;
 import com.joelcastro.introduccionandroid.daos.fake.DepositoMaterialFakeDAO;
 import com.joelcastro.introduccionandroid.daos.fake.EcoParqueFakeDAO;
 import com.joelcastro.introduccionandroid.daos.fake.MaterialesFakeDAO;
+import com.joelcastro.introduccionandroid.daos.parse.DepositoMaterialParseDAO;
+import com.joelcastro.introduccionandroid.daos.parse.DepositoParseDAO;
+import com.joelcastro.introduccionandroid.daos.parse.EcoParqueParseDAO;
+import com.joelcastro.introduccionandroid.daos.parse.MaterialesParseDAO;
+import com.joelcastro.introduccionandroid.daos.sqlite.DepositoMaterialSQLiteDAO;
 import com.joelcastro.introduccionandroid.daos.sqlite.DepositoSQLiteDAO;
+import com.joelcastro.introduccionandroid.daos.sqlite.EcoParqueSQLiteDAO;
 import com.joelcastro.introduccionandroid.daos.sqlite.MaterialesSQLiteDAO;
 
 /**
@@ -18,32 +24,40 @@ import com.joelcastro.introduccionandroid.daos.sqlite.MaterialesSQLiteDAO;
 @EBean(scope = Scope.Singleton)
 public class DAOFactory {
 
-    boolean useFakeData = false;
+    static int FAKE_DAO = 1;
+    static int SQLITEDAO = 2;
+    static int PARSEDAO = 3;
+
+    int SELECTED = PARSEDAO;
 
     @Bean
     MaterialesFakeDAO materialesFakeDAO;
-
     @Bean
     EcoParqueFakeDAO ecoParqueFakeDAO;
-
     @Bean
     DepositoFakeDAO depositoFakeDAO;
-
     @Bean
     DepositoMaterialFakeDAO depositoMaterialFakeDAO;
 
     @Bean
     MaterialesSQLiteDAO materialesSQLiteDAO;
+    @Bean
+    EcoParqueSQLiteDAO ecoParqueSQLiteDAO;
+    @Bean
+    DepositoSQLiteDAO depositoSQLiteDAO;
+    @Bean
+    DepositoMaterialSQLiteDAO depositoMaterialSQLiteDAO;
 
 
     @Bean
-    EcoParqueFakeDAO ecoParqueSQLiteDAO;
-
+    MaterialesParseDAO materialesParseDAO;
     @Bean
-    DepositoFakeDAO depositoSQLiteDAO;
-
+    EcoParqueParseDAO ecoParqueParseDAO;
     @Bean
-    DepositoMaterialFakeDAO depositoMaterialSQLiteDAO;
+    DepositoParseDAO depositoParseDAO;
+    @Bean
+    DepositoMaterialParseDAO depositoMaterialParseDAO;
+
 
     MaterialesDAO materialesDAOSelected;
     EcoParqueDAO ecoParqueDAOSelected;
@@ -52,26 +66,29 @@ public class DAOFactory {
 
     @AfterInject
     void initDAOs(){
-        if (useFakeData){
+        if (SELECTED == FAKE_DAO){
             materialesDAOSelected = materialesFakeDAO;
             ecoParqueDAOSelected = ecoParqueFakeDAO;
             depositoDAOSelected = depositoFakeDAO;
             depositoMaterialDAOSelected = depositoMaterialFakeDAO;
-        } else {
+        } else if(SELECTED == SQLITEDAO){
             materialesDAOSelected = materialesSQLiteDAO;
             ecoParqueDAOSelected = ecoParqueSQLiteDAO;
             depositoDAOSelected = depositoSQLiteDAO;
             depositoMaterialDAOSelected = depositoMaterialSQLiteDAO;
+        }else if(SELECTED == PARSEDAO){
+            materialesDAOSelected = materialesParseDAO;
+            ecoParqueDAOSelected = ecoParqueParseDAO;
+            depositoDAOSelected = depositoParseDAO;
+            depositoMaterialDAOSelected = depositoMaterialParseDAO;
         }
     }
 
     public MaterialesDAO getMaterialesDAO(){
         return materialesDAOSelected;
     }
-
     public DepositoDAO getDepositosDAO(){return depositoDAOSelected;}
     public EcoParqueDAO getEcoParqueDAO(){return ecoParqueDAOSelected;}
-
     public DepositoMaterialDAO getDepositoMaterialDAO() {
         return depositoMaterialDAOSelected;
     }

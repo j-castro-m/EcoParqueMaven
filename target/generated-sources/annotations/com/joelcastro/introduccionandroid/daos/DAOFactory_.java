@@ -12,6 +12,13 @@ import com.joelcastro.introduccionandroid.daos.fake.DepositoFakeDAO_;
 import com.joelcastro.introduccionandroid.daos.fake.DepositoMaterialFakeDAO_;
 import com.joelcastro.introduccionandroid.daos.fake.EcoParqueFakeDAO_;
 import com.joelcastro.introduccionandroid.daos.fake.MaterialesFakeDAO_;
+import com.joelcastro.introduccionandroid.daos.parse.DepositoMaterialParseDAO_;
+import com.joelcastro.introduccionandroid.daos.parse.DepositoParseDAO_;
+import com.joelcastro.introduccionandroid.daos.parse.EcoParqueParseDAO_;
+import com.joelcastro.introduccionandroid.daos.parse.MaterialesParseDAO_;
+import com.joelcastro.introduccionandroid.daos.sqlite.DepositoMaterialSQLiteDAO_;
+import com.joelcastro.introduccionandroid.daos.sqlite.DepositoSQLiteDAO_;
+import com.joelcastro.introduccionandroid.daos.sqlite.EcoParqueSQLiteDAO_;
 import com.joelcastro.introduccionandroid.daos.sqlite.MaterialesSQLiteDAO_;
 
 public final class DAOFactory_
@@ -30,14 +37,18 @@ public final class DAOFactory_
         if (!(context_ instanceof Activity)) {
             return ;
         }
-        ((DepositoMaterialFakeDAO_) depositoMaterialSQLiteDAO).afterSetContentView_();
-        ((EcoParqueFakeDAO_) ecoParqueFakeDAO).afterSetContentView_();
-        ((EcoParqueFakeDAO_) ecoParqueSQLiteDAO).afterSetContentView_();
-        ((MaterialesSQLiteDAO_) materialesSQLiteDAO).afterSetContentView_();
-        ((DepositoFakeDAO_) depositoSQLiteDAO).afterSetContentView_();
-        ((DepositoMaterialFakeDAO_) depositoMaterialFakeDAO).afterSetContentView_();
+        ((DepositoParseDAO_) depositoParseDAO).afterSetContentView_();
         ((DepositoFakeDAO_) depositoFakeDAO).afterSetContentView_();
+        ((EcoParqueParseDAO_) ecoParqueParseDAO).afterSetContentView_();
+        ((MaterialesSQLiteDAO_) materialesSQLiteDAO).afterSetContentView_();
+        ((MaterialesParseDAO_) materialesParseDAO).afterSetContentView_();
+        ((DepositoMaterialParseDAO_) depositoMaterialParseDAO).afterSetContentView_();
+        ((EcoParqueSQLiteDAO_) ecoParqueSQLiteDAO).afterSetContentView_();
+        ((DepositoMaterialSQLiteDAO_) depositoMaterialSQLiteDAO).afterSetContentView_();
         ((MaterialesFakeDAO_) materialesFakeDAO).afterSetContentView_();
+        ((EcoParqueFakeDAO_) ecoParqueFakeDAO).afterSetContentView_();
+        ((DepositoMaterialFakeDAO_) depositoMaterialFakeDAO).afterSetContentView_();
+        ((DepositoSQLiteDAO_) depositoSQLiteDAO).afterSetContentView_();
     }
 
     /**
@@ -54,14 +65,18 @@ public final class DAOFactory_
         if (context_ instanceof Activity) {
             Activity activity = ((Activity) context_);
         }
-        depositoMaterialSQLiteDAO = DepositoMaterialFakeDAO_.getInstance_(context_);
-        ecoParqueFakeDAO = EcoParqueFakeDAO_.getInstance_(context_);
-        ecoParqueSQLiteDAO = EcoParqueFakeDAO_.getInstance_(context_);
-        materialesSQLiteDAO = MaterialesSQLiteDAO_.getInstance_(context_);
-        depositoSQLiteDAO = DepositoFakeDAO_.getInstance_(context_);
-        depositoMaterialFakeDAO = DepositoMaterialFakeDAO_.getInstance_(context_);
+        depositoParseDAO = DepositoParseDAO_.getInstance_(context_);
         depositoFakeDAO = DepositoFakeDAO_.getInstance_(context_);
+        ecoParqueParseDAO = EcoParqueParseDAO_.getInstance_(context_);
+        materialesSQLiteDAO = MaterialesSQLiteDAO_.getInstance_(context_);
+        materialesParseDAO = MaterialesParseDAO_.getInstance_(context_);
+        depositoMaterialParseDAO = DepositoMaterialParseDAO_.getInstance_(context_);
+        ecoParqueSQLiteDAO = EcoParqueSQLiteDAO_.getInstance_(context_);
+        depositoMaterialSQLiteDAO = DepositoMaterialSQLiteDAO_.getInstance_(context_);
         materialesFakeDAO = MaterialesFakeDAO_.getInstance_(context_);
+        ecoParqueFakeDAO = EcoParqueFakeDAO_.getInstance_(context_);
+        depositoMaterialFakeDAO = DepositoMaterialFakeDAO_.getInstance_(context_);
+        depositoSQLiteDAO = DepositoSQLiteDAO_.getInstance_(context_);
         initDAOs();
     }
 

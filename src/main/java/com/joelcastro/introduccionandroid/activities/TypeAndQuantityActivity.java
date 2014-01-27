@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.AfterInject;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Bean;
 import com.googlecode.androidannotations.annotations.Click;
@@ -53,14 +54,19 @@ public class TypeAndQuantityActivity extends Activity {
      @ViewById(R.id.checkBoxFridge) CheckBox checkBoxFridge;
      @ViewById(R.id.checkBoxOil) CheckBox checkBoxOil;
 
-    DAOFactory daoFactory = new DAOFactory();
-    @Bean(DepositoMaterialSQLiteDAO.class)
-    DepositoMaterialDAO depositoMaterialDAO = daoFactory.getDepositoMaterialDAO();
+    @Bean
+    DAOFactory daoFactory;
+    DepositoMaterialDAO depositoMaterialDAO;
 
      Bundle extra;
         String fecha;
         Boolean company;
         Empresa empresa;
+
+    @AfterInject
+    void initDAO(){
+        depositoMaterialDAO = daoFactory.getDepositoMaterialDAO();
+    }
 
         @AfterViews
         void setDataonView(){

@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.googlecode.androidannotations.annotations.AfterInject;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Bean;
 import com.googlecode.androidannotations.annotations.EActivity;
@@ -34,16 +35,22 @@ public class DepositoListActivity extends Activity {
     @Pref
     MyPrefs_ myPrefs;
 
-    DAOFactory daoFactory = new DAOFactory();
-    @Bean(DepositoSQLiteDAO.class)
-    DepositoDAO depositoDAO = daoFactory.getDepositosDAO();
-
     ArrayAdapterDeposito adapter;
 
 
+    @Bean
+    DAOFactory daoFactory;
+    DepositoDAO depositoDAO;
+
+
+    @AfterInject
+    void initDAO(){
+        depositoDAO = daoFactory.getDepositosDAO();
+    }
+
     @AfterViews
     void fillAdapterList(){
-        adapter = new ArrayAdapterDeposito(this, R.layout.deposito_item_layout, (depositoDAO.getAllDeposites()));
+        adapter = new ArrayAdapterDeposito(this, R.layout.deposito_item_layout, (depositoDAO.getDepositesFromEcoParque(myPrefs.idEcoParque().get())));
         listViewItems.setAdapter(adapter);
     }
 
@@ -51,7 +58,7 @@ public class DepositoListActivity extends Activity {
     void onDepositoClick(int position)
     {
         Intent intent = new Intent().setClass(this, ResultsActivity_.class);
-        intent.putExtra("deposito", depositoDAO.getAllDeposites().get(position));
+        intent.putExtra("deposito", depositoDAO.getDepositesFromEcoParque(myPrefs.idEcoParque().get()).get(position));
         //objectItemData[position].getId()
         //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);

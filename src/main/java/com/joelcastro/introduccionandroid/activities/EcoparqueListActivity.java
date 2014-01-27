@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.googlecode.androidannotations.annotations.AfterInject;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Bean;
 import com.googlecode.androidannotations.annotations.EActivity;
@@ -30,11 +31,19 @@ public class EcoparqueListActivity extends Activity {
     @ViewById(R.id.listView) ListView listViewItems;
     @Pref MyPrefs_ myPrefs;
 
-    DAOFactory daoFactory = new DAOFactory();
-    @Bean(EcoParqueSQLiteDAO.class)
-    EcoParqueDAO ecoParqueDAO = daoFactory.getEcoParqueDAO();
+    @Bean
+    DAOFactory daoFactory;
+    EcoParqueDAO ecoParqueDAO;
+
+
 
     ArrayAdapterEcoParque adapter;
+
+
+    @AfterInject
+    void initDAO(){
+        ecoParqueDAO = daoFactory.getEcoParqueDAO();
+    }
 
 
     @AfterViews

@@ -6,6 +6,7 @@ import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.googlecode.androidannotations.annotations.AfterInject;
 import com.googlecode.androidannotations.annotations.Bean;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EViewGroup;
@@ -28,9 +29,10 @@ import com.joelcastro.introduccionandroid.models.Material;
  */
 @EViewGroup(R.layout.deposito_item_layout)
 public class DepositoListItemView extends RelativeLayout {
-    DAOFactory daoFactory = new DAOFactory();
-    @Bean(DepositoMaterialFakeDAO.class)
-    DepositoMaterialDAO depositoMaterialDAO = daoFactory.getDepositoMaterialDAO();
+
+    @Bean
+    DAOFactory daoFactory;
+    DepositoMaterialDAO depositoMaterialDAO;
 
     @ViewById(R.id.depositoListItemIdAndWeight)
     TextView idAndWeigth;
@@ -41,6 +43,12 @@ public class DepositoListItemView extends RelativeLayout {
 
     Context context;
     Deposito deposito;
+
+    @AfterInject
+    void initDAO(){
+        depositoMaterialDAO = daoFactory.getDepositoMaterialDAO();
+    }
+
 
     public DepositoListItemView(Context context) {
         super(context);
