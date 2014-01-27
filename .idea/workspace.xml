@@ -40,24 +40,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fa7656d-4060-499b-9cbd-29030f71a065" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/parse/DepositoMaterialParseDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/parse/DepositoParseDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/parse/EcoParqueParseDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/parse/MaterialesParseDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/ecoparque.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/rest/MaterialesRestDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/rest/ParseHeadersInterceptor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/rest/clients/MaterialesClient.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/rest/clients/MaterialsResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/rest/resources/ParseResponse.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DAOFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DAOFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/daos/DAOFactory_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/joelcastro/introduccionandroid/daos/DAOFactory_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositoListActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/DepositoListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/DepositoListItemView.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/DepositoListItemView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/EcoparqueListActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/EcoparqueListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/ResultsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ecoparque.iws" />
@@ -157,7 +139,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="19" column="23" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,7 +149,7 @@
       <file leaf-file-name="DepositoParseDAO.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/parse/DepositoParseDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="57" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.6193182" vertical-offset="1462" max-vertical-offset="2070">
+            <state line="112" column="57" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.62285715" vertical-offset="1462" max-vertical-offset="2070">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#671#681#0" expanded="true" />
@@ -858,7 +842,11 @@
       <created>1390338179565</created>
       <updated>1390338179565</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="version 2.1 - Conseguido flujo de insertar y editar con Parse, falta los checkins materiales. Mejorado el selector de parques&#10;">
+      <created>1390860774262</created>
+      <updated>1390860774262</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -896,7 +884,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3055118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4031496" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4044234" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -965,7 +953,8 @@
     <MESSAGE value="version 1.3 - Compilado con DAOSQLite,implementadas todas las funciones, falta resolver bugs y checkedbox" />
     <MESSAGE value="version 1.4 - Funcionando 100 SQLite, falta solucionar bug fecha." />
     <MESSAGE value="version 1.5 - Entrega Final Practica Annotations + SQLite" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.5 - Entrega Final Practica Annotations + SQLite" />
+    <MESSAGE value="version 2.1 - Conseguido flujo de insertar y editar con Parse, falta los checkins materiales. Mejorado el selector de parques&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 2.1 - Conseguido flujo de insertar y editar con Parse, falta los checkins materiales. Mejorado el selector de parques&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1071,12 +1060,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/InfoDomActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
+        <state line="21" column="13" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="967" selection-end="967" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1080" />
+        <state line="25" column="13" selection-start="967" selection-end="967" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1080">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/TypeAndQuantityActivity.java">
@@ -1090,12 +1083,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/activities/UserTypeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="969" selection-end="969" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1815" />
+        <state line="28" column="13" selection-start="969" selection-end="969" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1815">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ArrayAdapterDeposito.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="30" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705" />
+        <state line="42" column="30" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/utils/ArrayAdapterEcoParque.java">
@@ -1173,8 +1170,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="31" selection-start="535" selection-end="535" vertical-scroll-proportion="0.33333334" vertical-offset="132" max-vertical-offset="660">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#704#714#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#704#714#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1182,7 +1179,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/DepositoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="23" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1254,7 +1253,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joelcastro/introduccionandroid/daos/parse/DepositoParseDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="57" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.6193182" vertical-offset="1462" max-vertical-offset="2070">
+        <state line="112" column="57" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.62285715" vertical-offset="1462" max-vertical-offset="2070">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#671#681#0" expanded="true" />
